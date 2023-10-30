@@ -11,7 +11,7 @@
 
 #previous-arrow {
     text-decoration: none;
-    background-color: gray;
+    background-color: rgb(0, 255, 255);
     color: black;
     width: 15px;
     height: 60px;
@@ -19,6 +19,7 @@
     margin-left: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    border: solid black 1px;
     border-radius: 10px;
     font-size: 50px;
 }
@@ -33,17 +34,18 @@
     width: 300px;
     margin-top: auto;
     margin-left: 45px;
-    padding-bottom: 5px;
 }
 
 .navbar {
     display: flex;
     border-bottom: solid black 2px;
+    background-color: rgb(141, 244, 244);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-list-div {
     display: flex;
-    margin-left: 230px;
+    margin-left: 200px;
     justify-content: right;
 }
 
@@ -88,8 +90,8 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    width: 80px;
+    background-color: rgb(141, 244, 244);
+    width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -208,7 +210,7 @@
     margin-left: 450px;
 }
 
-.footer-a {
+.footer-a, #mobile-number{
     display: flex;
     flex-direction: row;
     text-decoration: none;
@@ -227,6 +229,11 @@
 
 .learn-more-div {
     margin-top: 10px;
+}
+
+.footer-a:hover {
+    color: #13cce0;
+    text-decoration: underline;
 }
 
 .company {
