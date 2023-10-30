@@ -1,0 +1,246 @@
+/* Header Portion */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-logo-div {
+    display: flex;
+}
+
+#previous-arrow {
+    text-decoration: none;
+    align-self: center;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: black;
+}
+
+#previous-arrow:hover {
+    box-shadow: 1px 1px 10px 5px #13cce0;
+}
+
+#logo-header {
+    height: 90px;
+    width: 300px;
+    margin-top: auto;
+    margin-left: 45px;
+}
+
+.navbar {
+    display: flex;
+    border-bottom: solid black 2px;
+    background-color: rgb(141, 244, 244);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-list-div {
+    display: flex;
+    margin-left: 200px;
+    justify-content: right;
+}
+
+.nav-list {
+    display: flex;
+    margin-top:  auto;
+    margin-bottom: auto;
+    margin-left: 30px;
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+.nav-list-a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown .dropdown-btn{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-size: 30px;
+    font-family: inherit;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.navbar .dropdown-btn:hover,
+.dropdown-item:hover, .nav-list-a:hover,
+.dropdown:hover,
+.dropdown-btn:focus {
+    color: #13cce0;
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(141, 244, 244);
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: solid black 1px;
+    border-bottom: solid black 2px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 1;
+}
+ 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Body Portion */
+
+#emergency-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(229, 243, 243);
+}
+
+.Site-content {
+    max-width: 90%;
+    margin: auto;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#Heading-Rescue-Kit {
+    font-size: 40px;
+    font-weight: 650;
+}
+
+#starter {
+    text-decoration: none;
+    display: flex;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.points {
+    margin-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.points-header {
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.sub-list {
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 40px;
+    text-align: justify;
+}
+
+.points-seperator {
+    border: solid black .5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.link-in-body {
+    text-decoration: underline;
+    color: black;
+}
+
+.link-in-body:hover {
+    color: #13cce0;
+}
+
+/* Footer Portion */
+
+.footer {
+    background-color: rgb(4, 4, 4);
+    height: 230px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-top: solid black 2px;
+}
+
+#logo-footer {
+    display: flex;
+    width: 300px;
+    height: 90px;
+}
+
+#line-below-logo-footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    border: solid white 1.5px;
+}
+
+.footer-list {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 450px;
+}
+
+.footer-a, #mobile-number{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    width: fit-content;
+    color: white;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.learn-more {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-right: 50px;
+}
+
+.learn-more-div {
+    margin-top: 10px;
+}
+
+.footer-a:hover {
+    color: #13cce0;
+    text-decoration: underline;
+}
+
+.company {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.company-div {
+    margin-top: 10px;
+}
+
+.support {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-left: 50px;
+}
+
+.support-div {
+    margin-top: 10px;
+}
