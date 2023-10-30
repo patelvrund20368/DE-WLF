@@ -158,6 +158,7 @@
 /* Footer Portion */
 
 .footer {
+    margin-top: 20px;
     background-color: rgb(4, 4, 4);
     height: 230px;
     padding-left: 20px;
