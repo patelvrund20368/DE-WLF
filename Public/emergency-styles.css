@@ -4,6 +4,30 @@
     padding: 0;
     margin: 0;
 }
+
+.nav-logo-div {
+    display: flex;
+}
+
+#previous-arrow {
+    text-decoration: none;
+    background-color: gray;
+    color: black;
+    width: 15px;
+    height: 60px;
+    align-self: center;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-size: 50px;
+}
+
+#previous-arrow:hover {
+    background-color: black;
+    color: #13cce0;
+}
+
 #logo-header {
     height: 90px;
     width: 300px;
@@ -11,40 +35,48 @@
     margin-left: 45px;
     padding-bottom: 5px;
 }
-#arrow-header {
-    margin-left: 30px;
-    align-self: center;
-    height: 30px;
-    width: 30px;
-}
+
 .navbar {
     display: flex;
     border-bottom: solid black 2px;
 }
+
 .nav-list-div {
     display: flex;
-    margin-left: 300px;
+    margin-left: 230px;
     justify-content: right;
 }
+
 .nav-list {
     display: flex;
     margin-top:  auto;
     margin-bottom: auto;
     margin-left: 30px;
     padding-right: 20px;
-    font-size: 20px;
+    font-size: 25px;
 }
+
 .nav-list-a {
     text-decoration: none;
     color: black;
 }
-.dropdown .dropdown-btn, .dropdown-item{
+
+.dropdown .dropdown-btn{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-size: 30px;
+    font-family: inherit;
+}
+
+.dropdown-item {
     text-decoration: none;
     color: black;
     display: flex;
     font-size: 20px;
     font-family: inherit;
 }
+
 .navbar .dropdown-btn:hover,
 .dropdown-item:hover, .nav-list-a:hover,
 .dropdown:hover,
@@ -52,6 +84,7 @@
     color: #13cce0;
     text-decoration: underline;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -74,14 +107,11 @@
 
 /* Body Portion */
 .Site-content {
-    margin-top: 10%
-}
-
-.Site-content {
+    margin-top: 10%;
     height: 300px;
 }
 
-.Site-content h2 {
+.Site-content #Heading-Rescue-Kit {
     margin-top: 3%;
 }
 
