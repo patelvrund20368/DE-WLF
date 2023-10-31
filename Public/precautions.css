@@ -12,11 +12,10 @@
 #previous-arrow {
     text-decoration: none;
     align-self: center;
-    margin-left: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 50%;
-    font-size: 50px;
+    margin-left: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 300%;
     color: black;
 }
 
@@ -25,10 +24,11 @@
 }
 
 #logo-header {
-    height: 90px;
-    width: 300px;
-    margin-top: auto;
-    margin-left: 45px;
+    height: 80%;
+    width: 50%;
+    margin-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .navbar {
@@ -40,44 +40,43 @@
 
 .nav-list-div {
     display: flex;
-    margin-left: 200px;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 7%;
     justify-content: right;
 }
 
 .nav-list {
     display: flex;
-    margin-top:  auto;
-    margin-bottom: auto;
-    margin-left: 30px;
-    padding-right: 20px;
-    font-size: 25px;
+    width: fit-content;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .nav-list-a {
     text-decoration: none;
     color: black;
+    font-size: 130%;
 }
 
 .dropdown .dropdown-btn{
     text-decoration: none;
     color: black;
     display: flex;
-    font-size: 30px;
-    font-family: inherit;
+    font-size: 170%;
 }
 
 .dropdown-item {
     text-decoration: none;
     color: black;
     display: flex;
-    font-size: 20px;
-    font-family: inherit;
+    font-size: 120%;
 }
 
-.navbar .dropdown-btn:hover,
 .dropdown-item:hover, .nav-list-a:hover,
-.dropdown:hover,
-.dropdown-btn:focus {
+.dropdown:hover {
     color: #13cce0;
     text-decoration: underline;
 }
@@ -87,10 +86,10 @@
     position: absolute;
     background-color: rgb(141, 244, 244);
     width: fit-content;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     border-left: solid black 1px;
     border-bottom: solid black 2px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -119,6 +118,7 @@
     margin-bottom: 1%;
     font-weight: 500;
     padding-left: 3%;
+    padding-right: 3%;
     text-decoration: underline;
 }
 
@@ -145,8 +145,8 @@
 }
 
 .link-outof-body {
-    text-decoration: none;
-    color: blue;
+    text-decoration: underline;
+    color: black;
 }
 
 .link-in-body:hover, .link-outof-body:hover{
@@ -213,32 +213,32 @@
 
 .footer {
     background-color: rgb(4, 4, 4);
-    height: 230px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 50px;
+    height: 100%;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-bottom: 3%;
     border-top: solid black 2px;
 }
 
 #logo-footer {
     display: flex;
-    width: 300px;
-    height: 90px;
+    width: 25%;
 }
 
 #line-below-logo-footer {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 300px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 24.8%;
     border: solid white 1.5px;
 }
 
 .footer-list {
     display: flex;
     color: white;
-    font-size: 20px;
+    font-size: 130%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 450px;
+    margin-top: 2%;
+    margin-left: 35%;
 }
 
 .footer-a, #mobile-number{
@@ -247,7 +247,7 @@
     text-decoration: none;
     width: fit-content;
     color: white;
-    font-size: 23px;
+    font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -255,37 +255,24 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin-right: 50px;
-}
-
-.learn-more-div {
-    margin-top: 10px;
-}
-
-.footer-a:hover {
-    color: #13cce0;
-    text-decoration: underline;
+    margin-right: 15%;
 }
 
 .company {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.company-div {
-    margin-top: 10px;
+    margin-right: 15%;
 }
 
 .support {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin-left: 50px;
+    margin-right: 15%;
 }
 
-.support-div {
-    margin-top: 10px;
+.footer-a:hover {
+    color: #13cce0;
+    text-decoration: underline;
 }
