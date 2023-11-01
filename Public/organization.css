@@ -103,6 +103,7 @@
 
 /* main body */
 
+
 #about-body {
     padding-top: 3%;
     padding-bottom: 3%;
@@ -112,7 +113,7 @@
 .Site-content {
     max-width: 90%;
     margin: auto;
-    text-align: left;
+    text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -120,21 +121,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60vh;
     margin: 0%;
     padding: 0%;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
 }
 
 #map {
-    height: 70%; 
-    width: 70%;
+    height: 100%; 
+    width: 60%;
+    border: 2px solid black;
 }
 #get-location {
-    margin-top: 40px;
     padding: 10px;
     background-color: #007BFF;
     color: #fff;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 
