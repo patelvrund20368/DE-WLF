@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show My Location</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="organization.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <nav class="background">
+          <ul class="navbar">
+            <div class="nav-logo-div">
+              <a href="#" id="previous-arrow">&#8249;</a>
+              <img src="../Images/logo-wlr-removebg.png" id="logo-header" />
+            </div>
+            <div class="nav-list-div">
+              <li class="nav-list"><a class="nav-list-a" href="#">Home</a></li>
+              <li class="nav-list">
+                <a class="nav-list-a" href="precautions.html">Precautions</a>
+              </li>
+              <li class="nav-list">
+                <a class="nav-list-a" href="emergency.html"
+                  >Emergency&nbsp;Kit</a
+                >
+              </li>
+              <li class="nav-list">
+                <div class="dropdown">
+                  <a href="#" class="dropdown-btn">&#9776;</a>
+                  <div class="dropdown-content" id="myDropdown">
+                    <a class="dropdown-item" href="#">Blog</a>
+                    <a class="dropdown-item" href="#">Gallery</a>
+                    <a class="dropdown-item" href="about-us.html">About Us</a>
+                  </div>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main body -->
+    <main>
+      <section id="about-body">
+        <div class="Site-content">
+          <button id="get-location">Show My Location</button>
+          <div class="map-container">
+            <div id="map"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <img id="logo-footer" src="../Images/logo-wlr.png" />
+        <hr id="line-below-logo-footer" />
+        <div class="footer-list">
+          <ul class="learn-more">
+            Learn More
+            <div class="learn-more-div">
+              <li><a class="footer-a" href="#">Home</a></li>
+              <li>
+                <a class="footer-a" href="precautions.html">Precautions</a>
+              </li>
+              <li>
+                <a class="footer-a" href="emergency.html">Emergency Kit</a>
+              </li>
+              <li>
+                <a class="footer-a" href="precautions.html">Precautions</a>
+              </li>
+              <li>
+                <a class="footer-a" href="emergency.html">Emergency Kit</a>
+              </li>
+              <li><a class="footer-a" href="#">Reviews</a></li>
+            </div>
+          </ul>
+          <ul class="company">
+            Company
+            <div class="company-div">
+              <li><a class="footer-a" href="about-us.html">About Us</a></li>
+              <li><a class="footer-a" href="#">Gallery</a></li>
+              <li><a class="footer-a" href="#">Blogs</a></li>
+              <li><a class="footer-a" href="#">Organizations</a></li>
+            </div>
+          </ul>
+          <ul class="support">
+            Support
+            <div class="support-div">
+              <li id="mobile-number">(+91)9537300286</li>
+              <li><a class="footer-a" href="#">Contace Us</a></li>
+              <li><a class="footer-a" href="#">FAQ</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Initialize the map
+      var map = L.map("map").setView([0, 0], 13);
+
+      // Add an OpenStreetMap tile layer
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        subdomains: "abc",
+      }).addTo(map);
+
+      document.getElementById("get-location").addEventListener("click", () => {
+        if (navigator.geolocation) {
+          // Prompt the user for location access
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              // Get the user's location
+              const userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              };
+              // Center the map on the user's location
+              map.setView(userLocation, 13);
+
+              // Add a marker at the user's location (optional)
+              L.marker(userLocation).addTo(map);
+            },
+            (error) => {
+              console.error("Location access denied:", error);
+            }
+          );
+        } else {
+          console.error("Geolocation not supported by your browser.");
+        }
+      });
+    </script>
+  </body>
+</html>
