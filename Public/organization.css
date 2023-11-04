@@ -147,7 +147,7 @@ body {
 }
 .map-container{
     display: flex;
-    justify-content: right;
+    justify-content: center;
     /* align-items: center; */
     height: 77vh;
     margin: 0%;
@@ -158,17 +158,24 @@ body {
 }
 
 .user-info{
-    display: none;
+    /* display: none; */
     align-items: flex-start;
     text-align: left;
     margin-right: 10%;
     font-size: larger;
+    /* background-color: #007BFF; */
+    padding-bottom: 45%;
 }
 
-.user-info.visible{
+.info{
+    display: none;
+}
+
+.info.visible{
     display: block;
 }
-#accept-button, #decline-button{
+
+.accept-button, .decline-button{
     margin-top: 5%;
     margin-bottom: 3%;
     margin-left: 2%;
