@@ -148,7 +148,7 @@ body {
 .map-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     height: 77vh;
     margin: 0%;
     padding: 0%;
@@ -157,13 +157,43 @@ body {
     padding-bottom: 20px;
 }
 
+.user-info{
+    /* display: none; */
+    align-items: flex-start;
+    text-align: left;
+    margin-right: 10%;
+    font-size: larger;
+    /* background-color: #007BFF; */
+    padding-bottom: 45%;
+}
+
+.info{
+    display: none;
+}
+
+.info.visible{
+    display: block;
+}
+
+.accept-button, .decline-button{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 2%;
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 7px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer; 
+}
+
 #map {
     height: 100%; 
     width: 67%;
     border: 2px solid black;
 }
 
-#get-location {
+#user-location,#organization-location{
     padding: 10px;
     background-color: #007BFF;
     color: #fff;
