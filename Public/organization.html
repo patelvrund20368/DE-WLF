@@ -48,9 +48,28 @@
       <section id="about-body">
         <div class="Site-content">
           <div class="map-container">
+            <div class="user-info">
+              <p>User: Vrund Patel</p>
+              <p>Contact No: +91-9820398233</p>
+              <div id="distance">Distance: Calculating...</div>
+              <button id="accept-button">Accept</button>
+              <button id="decline-button" style="margin-left: 11% ;" >Decline</button>
+              <br><br>
+              <hr><hr>
+              <br>
+              <p>User: Parth Patel</p>
+              <p>Contact No: +91-9820398233</p>
+              <div id="distance">Distance: Calculating...</div>
+              <button id="accept-button">Accept</button>
+              <button id="decline-button" style="margin-left: 11% ;" >Decline</button>
+              <br><br>
+              <hr><hr>
+            </div>
             <div id="map"></div>
           </div>
-          <button id="get-location">Show My Location</button>
+          <button id="user-location" onclick="displayInfo()">Rescue</button> 
+          <br> <br>
+          <button id="organization-location">Show My Location</button>
           
         </div>
       </section>
@@ -118,7 +137,7 @@
 
       var markers = L.featureGroup().addTo(map);
 
-      document.getElementById("get-location").addEventListener("click", () => {
+      document.getElementById("accept-button").addEventListener("click", () => {
         if (navigator.geolocation) {
           // Prompt the user for location access
           navigator.geolocation.getCurrentPosition(
@@ -130,7 +149,7 @@
               };
 
               var marker = L.marker([userLocation.lat, userLocation.lng]).addTo(markers);
-              var popupContent = '<strong>User Information:</strong><br>Name: Wildlife<br>Email: wildliferescue@wlf.com<br>Phone No: +91 9283819331';
+              var popupContent = '<strong>User Information:</strong><br>Name: Vrund Patel<br>Email: wildliferescue@wlf.com<br>Phone No: +91 9283819331';
               marker.bindPopup(popupContent).openPopup();
               markers.addTo(map);
               map.fitBounds(markers.getBounds());
@@ -149,6 +168,12 @@
           console.error("Geolocation not supported by your browser.");
         }
       });
+    </script>
+    <script>
+      function displayInfo() {
+        var userInfo = document.querySelector(".user-info");
+        userInfo.classList.toggle("visible");
+      }
     </script>
   </body>
 </html>
