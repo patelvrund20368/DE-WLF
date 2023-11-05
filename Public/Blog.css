@@ -134,7 +134,7 @@ body {
     font-size: 3rem;
     color: #205BB2;
     font-size: 50px;
-    font-family: Inter;
+    font-family: Helvetica;
     font-weight: 900;
     word-wrap: break-word
 }
@@ -150,7 +150,7 @@ body {
     text-align: center;
     color: black;
     font-size: 30px;
-    font-family: Inter;
+    font-family: 'Calibri';
     font-weight: 400;
     word-wrap: break-word
 }
@@ -199,7 +199,7 @@ body {
 
 .blog-img {
     width: 100%;
-    height: auto;
+    height: 50%;
 }
 
 .blog-img img {
@@ -213,6 +213,7 @@ body {
 
 .blog-text .blog-title,
 .date {
+    padding-top: 5px;
     padding-bottom: 5px;
     margin-left: 5px;
     display: flex;
@@ -228,7 +229,7 @@ body {
     flex-direction: column;
     transform: scale(1.03);
     transition: 0.5s;
-    font-family: 'Times New Roman';
+    font-family: 'Calibri';
     color: black;
     font-size: large;
 }
@@ -251,12 +252,12 @@ body {
 
 
 .blog-text .extra {
-    font-family: 'Times New Roman';
+    font-family: 'Calibri';
     display: none;
 }
 
 .blog-text .original {
-    font-family: 'Times New Roman';
+    font-family: 'Calibri';
     display: inline;
 }
 
