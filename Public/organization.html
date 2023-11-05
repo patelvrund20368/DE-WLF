@@ -245,20 +245,20 @@
         
         markers.eachLayer(function (layer) {
           if (layer._popup.getContent().includes(userName)) {
-            // map.removeLayer(layer);
-            map.setView([0, 0], 13);
+            map.removeLayer(layer);
+            // map.setView([0, 0], 13);
           }
         });
 
         // removeInfo.style.display = 'none';
         removeInfo.remove();
 
-        // var userInfos = document.querySelectorAll(".info");
-        // if(userInfos.length === 0) {
+        var userInfos = document.querySelectorAll(".info");
+        if(userInfos.length === 0) {
         //   markers.clearLayers();
         //   map.closePopup();
-        //   map.setView([0, 0], 13);
-        // }
+          map.setView([0, 0], 13);
+        }
       }
     </script>
     <script>
