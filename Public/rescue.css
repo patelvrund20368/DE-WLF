@@ -132,6 +132,39 @@ body {
 
 .temp-content a{
     font-size: 150%;
+
+}
+.temp-content{
+    display: none;
+}
+.temp-content.visible{
+    display: block;
+}
+.enter-info{
+    padding: 31px;
+    display: inline-block;
+    font-size: 145%;
+    text-align: center;
+    background-color: #4e4d7e;
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+.enter-info.visible{
+    display: none;
+}
+#request-button{
+    font-size: large;
+    padding: 7px;
+    cursor: pointer;
+    background-color: #fbbbf8;
+    border-radius: 7px;
+    border: 2px solid black;
+}
+
+#request-button:hover{
+    background-color: #f77ff1;
 }
 /* Footer Portion */
 

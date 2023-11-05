@@ -241,7 +241,24 @@
 
       function removeInfo(button) {
         var removeInfo = button.closest(".info");
-        removeInfo.style.display = 'none';
+        var userName = removeInfo.querySelector('span').textContent;
+        
+        markers.eachLayer(function (layer) {
+          if (layer._popup.getContent().includes(userName)) {
+            map.removeLayer(layer);
+            // map.setView([0, 0], 13);
+          }
+        });
+
+        // removeInfo.style.display = 'none';
+        removeInfo.remove();
+
+        var userInfos = document.querySelectorAll(".info");
+        if(userInfos.length === 0) {
+        //   markers.clearLayers();
+        //   map.closePopup();
+          map.setView([0, 0], 13);
+        }
       }
     </script>
     <script>

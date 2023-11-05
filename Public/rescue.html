@@ -54,6 +54,16 @@
     <main>
       <section id="about-body">
         <div class="Site-content">
+          <div class="enter-info">
+            <div>
+              <b>Provide your information:</b><br><br>
+              <label for="name">Your Name:&#160;</label>
+              <input type="text" name="name"><br><br>
+              <label for="phoneNo">Contact No:&#160;</label>
+              <input type="tel" name="phoneNo"><br><br>
+              <button type="button" id="request-button" onclick="changeContent()">Send request</button>
+            </div>
+        </div>
           <div class="temp-content">
               <h1>Wait till any organization accept your request...</h1>
               <br>
@@ -109,6 +119,16 @@
         backButton.addEventListener("click", function () {
             window.history.back();
         });
+    </script>
+
+    <script>
+      function changeContent() {
+        var info = document.querySelector('.enter-info');
+        info.classList.toggle("visible");
+
+        var tempContent = document.querySelector('.temp-content');
+        tempContent.classList.toggle('visible');
+      }
     </script>
 </body>
 </html>
