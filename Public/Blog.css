@@ -178,7 +178,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-
     font-size: 16px;
     font-weight: 500;
     color: #fff;
@@ -195,15 +194,16 @@
 .blog-img img {
     width: 100%;
     height: 100%;
+    border: 2px solid black;
+    border-radius: 2px;
     object-fit: cover;
     object-position: center;
-    /* filter: drop-shadow(0 0 10px #333); */
 }
 
 .blog-text .blog-title,
 .date {
     padding-bottom: 5px;
-    margin-left: 10px;
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
     transform: scale(1.03);
@@ -217,12 +217,11 @@
     flex-direction: column;
     transform: scale(1.03);
     transition: 0.5s;
-}
-
-.blog-text span {
+    font-family: 'Times New Roman';
     color: black;
     font-size: large;
 }
+
 
 .blog-text .blog-title {
     font-size: 1.3rem;
@@ -241,10 +240,12 @@
 
 
 .blog-text .extra {
+    font-family: 'Times New Roman';
     display: none;
 }
 
 .blog-text .original {
+    font-family: 'Times New Roman';
     display: inline;
 }
 
