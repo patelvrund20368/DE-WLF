@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WildLife Rescue</title>
     <link rel="stylesheet" href="gallery.css">
 </head>
-<body>
 
+<body>
     <header>
-        <div class= "header">
+        <div class="header">
             <nav class="background">
                 <ul class="navbar">
                     <div class="nav-logo-div">
                         <a href="#" id="previous-arrow">&#8249;</a>
-                        <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" id="logo-header"/>
+                        <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" id="logo-header" />
                     </div>
                     <div class="nav-list-div">
                         <li class="nav-list"><a class="nav-list-a" href="homepage.html">Home</a></li>
@@ -24,7 +25,7 @@
                             <div class="dropdown">
                                 <a href="#" class="dropdown-btn">&#9776;</a>
                                 <div class="dropdown-content" id="myDropdown">
-                                    <a class="dropdown-item" href="#">Blog</a>
+                                    <a class="dropdown-item" href="Blog.html">Blog</a>
                                     <a class="dropdown-item" href="gallery.html">Gallery</a>
                                     <a class="dropdown-item" href="about-us.html">About Us</a>
                                 </div>
@@ -35,17 +36,16 @@
             </nav>
         </div>
     </header>
-
     <div id="wrapper">
         <div class="container">
             <h1>My Gallery</h1>
             <div class="gallery">
                 <figure class="card">
-                    <img src="../Images/gallery_img1.jpeg" alt="">
+                    <img src="../Images/gallery_img4.jpeg" alt="">
                     <figcaption>image1</figcaption>
                 </figure>
                 <figure class="card">
-                    <img src="../Images/gallery_img2.jpeg" alt="">
+                    <img src="../Images/gallery_img5.jpeg" alt="">
                     <figcaption>image2</figcaption>
                 </figure>
                 <figure class="card">
@@ -53,30 +53,28 @@
                     <figcaption>image3</figcaption>
                 </figure>
                 <figure class="card">
-                    <img src="../Images/gallery_img4.jpeg" alt="">
+                    <img src="../Images/gallery_img1.jpeg" alt="">
                     <figcaption>image4</figcaption>
                 </figure>
                 <figure class="card">
-                    <img src="../Images/gallery_img5.jpeg" alt="">
+                    <img src="../Images/gallery_img2.jpeg" alt="">
                     <figcaption>image5</figcaption>
                 </figure>
                 <figure class="card">
                     <img src="../Images/gallery_img6.jpeg" alt="">
                     <figcaption>image6</figcaption>
-                </figure>  
-                
+                </figure>
             </div>
         </div>
     </div>
-
     <footer>
-        <div class= "footer">
+        <div class="footer">
             <img id="logo-footer" src="https://i.ibb.co/LSX9KgQ/logo1.png" />
-            <hr id="line-below-logo-footer"/>
+            <hr id="line-below-logo-footer" />
             <div class="footer-list">
                 <ul class="learn-more"><b>Learn More</b>
                     <div class="learn-more-div">
-                        <li><a class="footer-a" href="homepage.html">Home</a></li>                        
+                        <li><a class="footer-a" href="homepage.html">Home</a></li>
                         <li><a class="footer-a" href="precautions.html">Precautions</a></li>
                         <li><a class="footer-a" href="emergency.html">Emergency Kit</a></li>
                         <li><a class="footer-a" href="#">Reviews</a></li>
@@ -84,9 +82,9 @@
                 </ul>
                 <ul class="company"><b>Company</b>
                     <div class="company-div">
-                        <li><a class="footer-a" href="about-us.html">About Us</a></li>                        
+                        <li><a class="footer-a" href="about-us.html">About Us</a></li>
                         <li><a class="footer-a" href="gallery.html">Gallery</a></li>
-                        <li><a class="footer-a" href="#">Blogs</a></li>
+                        <li><a class="footer-a" href="Blog.html">Blogs</a></li>
                         <li><a class="footer-a" href="#">Organizations</a></li>
                     </div>
                 </ul>
@@ -100,6 +98,12 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        var backButton = document.getElementById('previous-arrow');
+        backButton.addEventListener("click", function () {
+            window.history.back();
+        });
+    </script>
 </body>
+
 </html>

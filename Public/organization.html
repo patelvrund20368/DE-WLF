@@ -8,83 +8,168 @@
     />
     <link rel="stylesheet" href="organization.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Header -->
 
     <header>
-      <div class= "header">
-          <nav class="background">
-              <ul class="navbar">
-                  <div class="nav-logo-div">
-                      <a href="#" id="previous-arrow">&#8249;</a>
-                      <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" id="logo-header"/>
+      <div class="header">
+        <nav class="background">
+          <ul class="navbar">
+            <div class="nav-logo-div">
+              <a href="#" id="previous-arrow">&#8249;</a>
+              <img
+                src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png"
+                id="logo-header"
+              />
+            </div>
+            <div class="nav-list-div">
+              <li class="nav-list">
+                <a class="nav-list-a" href="homepage.html">Home</a>
+              </li>
+              <li class="nav-list">
+                <a class="nav-list-a" href="precautions.html">Precautions</a>
+              </li>
+              <li class="nav-list">
+                <a class="nav-list-a" href="emergency.html"
+                  >Emergency&nbsp;Kit</a
+                >
+              </li>
+              <li class="nav-list">
+                <div class="dropdown">
+                  <a href="#" class="dropdown-btn">&#9776;</a>
+                  <div class="dropdown-content" id="myDropdown">
+                    <a class="dropdown-item" href="Blog.html">Blog</a>
+                    <a class="dropdown-item" href="gallery.html">Gallery</a>
+                    <a class="dropdown-item" href="about-us.html">About Us</a>
                   </div>
-                  <div class="nav-list-div">
-                      <li class="nav-list"><a class="nav-list-a" href="#">Home</a></li>
-                      <li class="nav-list"><a class="nav-list-a" href="precautions.html">Precautions</a></li>
-                      <li class="nav-list"><a class="nav-list-a" href="emergency.html">Emergency&nbsp;Kit</a></li>
-                      <li class="nav-list">
-                          <div class="dropdown">
-                              <a href="#" class="dropdown-btn">&#9776;</a>
-                              <div class="dropdown-content" id="myDropdown">
-                                  <a class="dropdown-item" href="#">Blog</a>
-                                  <a class="dropdown-item" href="#">Gallery</a>
-                                  <a class="dropdown-item" href="about-us.html">About Us</a>
-                              </div>
-                          </div>
-                      </li>
-                  </div>
-              </ul>
-          </nav>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </nav>
       </div>
-  </header>
+    </header>
 
     <!-- Main body -->
     <main>
+      <div>
+        <h1 class="organization-name">Organization Name</h1>
+      </div>
       <section id="about-body">
         <div class="Site-content">
           <div class="map-container">
+            <div class="user-info">
+
+              <div class="info">                
+                <p>User: <span>&#160;Dhara Savani</span></p>
+                <p>Contact No: +91-9820398233</p>
+                <div id="distance">Distance: Calculating...</div>
+                <button class="accept-button">Accept</button>
+                <button class="decline-button" style="margin-left: 11%" onclick="removeInfo(this)">
+                  Decline
+                </button>
+                <br /><br />
+                <hr />
+                <hr />
+                <br />
+              </div>
+
+              <div class="info">
+                <p>User: <span>&#160;Vrund Patel</span></p>
+                <p>Contact No: +91-9820398233</p>
+                <div id="distance">Distance: Calculating...</div>
+                <button class="accept-button">Accept</button>
+                <button class="decline-button" style="margin-left: 11%" onclick="removeInfo(this)">
+                  Decline
+                </button>
+                <br /><br />
+                <hr />
+                <hr />
+                <br />
+              </div>
+
+              <div class="info">
+                <p>User: <span>&#160;Parth Patel</span></p>
+                <p>Contact No: +91-9820398233</p>
+                <div id="distance">Distance: Calculating...</div>
+                <button class="accept-button">Accept</button>
+                <button class="decline-button" style="margin-left: 11%" onclick="removeInfo(this)">
+                  Decline
+                </button>
+                <br /><br />
+                <hr />
+                <hr />
+              </div>
+
+            </div>
             <div id="map"></div>
           </div>
-          <button id="get-location">Show My Location</button>
+          <button id="user-location" onclick="displayInfo()">Rescue</button>
+          <br />
+          <br />
+          <button id="organization-location">Show My Location</button>
         </div>
       </section>
+      <div class="rescue-track-container">
+        <h3 style="font-size: 130%">
+          Number of Animals and Birds rescued by you
+        </h3>
+        <br />
+        <br />
+        <h1 class="rescue-number">
+          <span>72</span>
+          <span>78</span>
+        </h1>
+        <h2 class="rescue-category">
+          <span style="color: #6746c1">Animals</span>
+          <span style="color: #e6653c">Birds</span>
+          <br />
+          <span style="margin-left: 15%; color: #6746c1">Rescued</span>
+          <span style="margin-left: 12%; color: #e6653c">Rescued</span>
+        </h2>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer>
-            <div class= "footer">
-                <img id="logo-footer" src="https://i.ibb.co/LSX9KgQ/logo1.png" />
-                <hr id="line-below-logo-footer"/>
-                <div class="footer-list">
-                    <ul class="learn-more"><b>Learn More</b>
-                        <div class="learn-more-div">
-                            <li><a class="footer-a" href="#">Home</a></li>                        
-                            <li><a class="footer-a" href="precautions.html">Precautions</a></li>
-                            <li><a class="footer-a" href="emergency.html">Emergency Kit</a></li>
-                            <li><a class="footer-a" href="#">Reviews</a></li>
-                        </div>
-                    </ul>
-                    <ul class="company"><b>Company</b>
-                        <div class="company-div">
-                            <li><a class="footer-a" href="about-us.html">About Us</a></li>                        
-                            <li><a class="footer-a" href="#">Gallery</a></li>
-                            <li><a class="footer-a" href="#">Blogs</a></li>
-                            <li><a class="footer-a" href="#">Organizations</a></li>
-                        </div>
-                    </ul>
-                    <ul class="support"><b>Support</b>
-                        <div class="support-div">
-                            <li id="mobile-number">(+91)9537300286</li>
-                            <li><a class="footer-a" href="#">Contact Us</a></li>
-                            <li><a class="footer-a" href="#">FAQ</a></li>
-                        </div>
-                    </ul>
-                </div>
+      <div class="footer">
+        <img id="logo-footer" src="https://i.ibb.co/LSX9KgQ/logo1.png" />
+        <hr id="line-below-logo-footer" />
+        <div class="footer-list">
+          <ul class="learn-more">
+            <b>Learn More</b>
+            <div class="learn-more-div">
+              <li><a class="footer-a" href="homepage.html">Home</a></li>
+              <li>
+                <a class="footer-a" href="precautions.html">Precautions</a>
+              </li>
+              <li>
+                <a class="footer-a" href="emergency.html">Emergency Kit</a>
+              </li>
+              <li><a class="footer-a" href="#">Reviews</a></li>
             </div>
-        </footer>
-
+          </ul>
+          <ul class="company">
+            <b>Company</b>
+            <div class="company-div">
+              <li><a class="footer-a" href="about-us.html">About Us</a></li>
+              <li><a class="footer-a" href="gallery.html">Gallery</a></li>
+              <li><a class="footer-a" href="Blog.html">Blogs</a></li>
+              <li><a class="footer-a" href="#">Organizations</a></li>
+            </div>
+          </ul>
+          <ul class="support">
+            <b>Support</b>
+            <div class="support-div">
+              <li id="mobile-number">(+91)9537300286</li>
+              <li><a class="footer-a" href="#">Contact Us</a></li>
+              <li><a class="footer-a" href="#">FAQ</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // Initialize the map
@@ -97,38 +182,90 @@
       }).addTo(map);
 
       var markers = L.featureGroup().addTo(map);
+      var acceptButtons = document.getElementsByClassName("accept-button");
 
-      document.getElementById("get-location").addEventListener("click", () => {
-        if (navigator.geolocation) {
-          // Prompt the user for location access
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              // Get the user's location
-              const userLocation = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              };
+      Array.from(acceptButtons).forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (navigator.geolocation) {
+            // Prompt the user for location access
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                // Get the user's location
+                const userLocation = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                };
 
-              var marker = L.marker([userLocation.lat, userLocation.lng]).addTo(markers);
-              var popupContent = '<strong>User Information:</strong><br>Name: Wildlife<br>Email: wildliferescue@wlf.com<br>Phone No: +91 9283819331';
-              marker.bindPopup(popupContent).openPopup();
-              markers.addTo(map);
-              map.fitBounds(markers.getBounds());
-              
-              // Center the map on the user's location
-              map.setView(userLocation, 13);
+                var marker = L.marker([
+                  userLocation.lat,
+                  userLocation.lng,
+                ]).addTo(markers);
 
-              // Add a marker at the user's location (optional)
-              L.marker(userLocation).addTo(map);
-            },
-            (error) => {
-              console.error("Location access denied:", error);
-            }
-          );
-        } else {
-          console.error("Geolocation not supported by your browser.");
-        }
+                var infoDiv = button.closest('.info');
+                var name = infoDiv.querySelector('span').textContent;
+                console.log(name);
+                var popupContent =
+                  `<strong>User Information:</strong><br>Name: ${name}<br>Email: wildliferescue@wlf.com<br>Phone No: +91 9283819331`;
+                marker.bindPopup(popupContent).openPopup();
+                markers.addTo(map);
+                map.fitBounds(markers.getBounds());
+
+                // Center the map on the user's location
+                map.setView(userLocation, 13);
+
+                // Add a marker at the user's location (optional)
+                L.marker(userLocation).addTo(map);
+              },
+              (error) => {
+                console.error("Location access denied:", error);
+              }
+            );
+          } else {
+            console.error("Geolocation not supported by your browser.");
+          }
+        });
       });
+      // document.getElementsByClassName("accept-button").addEventListener("click", () => {
+
+      // });
     </script>
-  </body>
+    <script>
+      function displayInfo() {
+        var userInfos = document.querySelectorAll(".info");
+        console.log(userInfos);
+        userInfos.forEach(function (info) {
+          info.classList.toggle("visible");
+        });
+        
+      }
+
+      function removeInfo(button) {
+        var removeInfo = button.closest(".info");
+        var userName = removeInfo.querySelector('span').textContent;
+        
+        markers.eachLayer(function (layer) {
+          if (layer._popup.getContent().includes(userName)) {
+            map.removeLayer(layer);
+            // map.setView([0, 0], 13);
+          }
+        });
+
+        // removeInfo.style.display = 'none';
+        removeInfo.remove();
+
+        var userInfos = document.querySelectorAll(".info");
+        if(userInfos.length === 0) {
+        //   markers.clearLayers();
+        //   map.closePopup();
+          map.setView([0, 0], 13);
+        }
+      }
+    </script>
+    <script>
+      var backButton = document.getElementById('previous-arrow');
+      backButton.addEventListener("click", function () {
+          window.history.back();
+      });
+  </script>
+</body>
 </html>
