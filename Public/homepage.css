@@ -171,6 +171,9 @@ body {
 
 /* main body css */
 /* Apply styles to the main container */
+::-webkit-scrollbar {
+	display: none;
+  }
 .main{
 	padding-top: 8%;
 }
