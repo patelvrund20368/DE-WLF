@@ -180,6 +180,9 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    display: none;
+  }
 
 #wrapper {
     height: 100vh;
