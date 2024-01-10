@@ -118,7 +118,9 @@ body {
     opacity: 1;
 
 }
-
+::-webkit-scrollbar {
+    display: none;
+  }
 .dropdown:hover .dropdown-content {
     display: block;
 }
