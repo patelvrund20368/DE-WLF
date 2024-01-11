@@ -313,19 +313,9 @@ button:hover {
 
 .moving-line {
 	margin-top: 5%;
-	margin-bottom: 2%;
+	margin-bottom: 5%;
 	width: 100%;
-	animation: move 8s linear infinite;
-}
-
-@keyframes move {
-	0% {
-		transform: translateX(0%);
-	}
-
-	100% {
-		transform: translateX(-100%);
-	}
+	font-size: 200%;
 }
 
 .moving-line p {
