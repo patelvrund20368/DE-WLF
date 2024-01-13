@@ -1,107 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../static/singup.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Signup page</title>
-    <link rel="stylesheet" href="../static/singup.css">
+    </head>
 
-</head>
-
-<body>
-
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="Logo">
-            </div>
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    
-                    <li><a href="organization">Organization</a></li>
-                    <li><a href="precautions">Precautions</a></li>
-                    <li><a href="emergency">Emergency&nbsp;kit</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <a href="#" class="dropdown-btn">&#9776;</a>
-                            <div class="dropdown-content" id="myDropdown">
-                                <a class="dropdown-item" href="blog">Blog</a>
-                                <a class="dropdown-item" href="gallery">Gallery</a>
-                                <a class="dropdown-item" href="about-us">About Us</a>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="Logo">
+                </div>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        
+                        <li><a href="organization">Organization</a></li>
+                        <li><a href="precautions">Precautions</a></li>
+                        <li><a href="emergency">Emergency&nbsp;kit</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-btn">&#9776;</a>
+                                <div class="dropdown-content" id="myDropdown">
+                                    <a class="dropdown-item" href="blog">Blog</a>
+                                    <a class="dropdown-item" href="gallery">Gallery</a>
+                                    <a class="dropdown-item" href="about-us">About Us</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    
-    
-                </ul>
-            </div>
-        </nav>
-    
-    </header>
-
-
-
-
-        <div class="mainContainer">
-
-                <div>
-                    <a class="logo1" href=""><img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="sitelogo" border="0"></a>
-                    <!-- <br> -->
+                        </li>
+                        
+        
+                    </ul>
                 </div>
-           
-                <div>
-                    <label for="org_name">Organization Name:</label>
-                    <input type="text" placeholder="Oraganization name" name="Org_name" required><br>
-                    <label for="email">Email Address:</label>
-                    <input type="text" placeholder="Enter your Email" name="email" required><br>
-                    <label for="pswrd">Password:</label>
+            </nav>
+        
+        </header>
+
+        
+            <div class="Container">
+                <div class="logo">
+                    <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="Sitelogo">
+                </div>
+
+                <div class="information">
+                    <label for="orgname">Organization Name:</label>
+                    <input type="text" id="orgname" name="org name" placeholder="Enter Organization Name" required>
+                    <br>
+                    <label for="emailadd">Email:</label>
+                    <input type="email" id="emailadd" name="email" placeholder="Enter Email Address" required>
+                    <br>
                     <div class="password-container">
-                        <input type="password" placeholder="Enter Password" name="pswrd" id="password" required>
-                        <i class="fa-solid fa-eye" id="show-password"></i>
+                    <label for="pass">Password:</label>
+                        <input type="text" id="passwrd" name="pass" placeholder="Enter Password" required>
+                        <i class="far fa-eye" id="togglePassword"></i>
                     </div>
-                    <!-- <p><a href="">Forgot Password</a></p> -->
-                    <!-- <br> -->
-                    <label for="org_adrs">Organization Address:</label>
-                    <input type="text" placeholder="Oraganization address" name="Org_address" required><br>
-                    <!-- <br> -->
-                    <div class="data">
-                        <label for="state">State:</label>
-                        <input class="state" type="text" placeholder="State" name="State" required>
-                        <label for="city">City:</label>
-                        <input class="city" type="text" placeholder="City" name="city" required>
-                    </div>
-                    <!-- <br> -->
-                
-                    <label for="pin_code">Pin code:</label>
-                    <input class="pincode" type="text" placeholder="Pin code" name="pin_code" required><br>
-                </div>
-                <!-- <br> -->
-                <div>
-                    <button type="submit" id="submit" class="submit">Register</button>
-                </div>
-                    
-                <div>
-                    <p class="p">Already have an Account? <a href="login">Sign in</a></p><br>
-                    <hr class="l1">
-                    </hr>
-                </div>
-                
+                    <br>
 
-                <div class="google-btn">
-                    <div class="google-icon-wrapper">
-                        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                    <div class="password-container">
+                    <label for="Confirm">Confirm Password:</label>
+                        <input type="text" id="Confirm" name="cnfrmpasswrd" placeholder="Rewrite Password" required>
+                        <i class="far fa-eye" id="toggleConfirm"></i>
+                        <div class="mismatch">
+                            <p id="passwordMismatchMsg"></p>
+                        </div>
                     </div>
-                    <p class="btn-text"><b>Sign up with google</b></p>
+                    <br>
+                    <label for="orgadd">Address:</label>
+                    <input type="text" id="orgadd" name="org add" placeholder="Enter Organization's Address" required>
+                    <br>
+                    <label for="orgstat">State:</label>
+                    <input type="text" id="orgstat" name="state" placeholder="Enter Your State" required>
+                    <br>
+                    <label for="orgcty">City:</label>
+                    <input type="text" id="orgcty" name="city" placeholder="Enter Your City" required>
+                    <br>
+                    <label for="pincode">Pin-Code:</label>
+                    <input type="text" id="pincode" name="PIN" placeholder="Enter 6 Digit Pin-Code" required>
+                    <br>
+                    <label for="link">Organization URL:</label>
+                    <input type="url" id="link" name="url" placeholder="Enter Your Organization's URL" required>
+                    <div class="btn">
+                        <button type="submit" id="sbmit" value="submit" onclick="validform()">Register</button>
+                    </div>
+                    <div class="signin">
+                        <p>Already have an Account?</p>
+                        <a href="../templates/login.html">Sign in</a>
+                    </div>
                 </div>
-
+            </div>
         </div>
-            
-
 
         <footer>
             <div class= "footer">
@@ -144,24 +139,200 @@
                     </div>
                         
                 </div>
-            </div>
+            <!-- </div> -->
         </footer> 
-        <script>
-            var backButton = document.getElementById('previous-arrow');
-            backButton.addEventListener("click", function () {
-                window.history.back();
-            });
-        </script>
-          <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const toggleButton = document.querySelector('.toggle-button');
-                const navbarLinks = document.querySelector('.navbar-links');
-    
-                toggleButton.addEventListener('click', () => {
-                    navbarLinks.classList.toggle('active');
-                });
-            });
-        </script>
-</body>
 
+        <script>
+        function isValidName(name) {
+                const nameregex = /^[A-Za-z0-9\s\-&',.()]+$/;
+                return nameregex.test(name);
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            function isValidState(state) {
+                return state.trim() !== "";
+            }
+
+            function isValidCity(city) {
+                return city.trim() !== "";
+            }
+
+
+            function isValidPincode(pincode) {
+                const pincodeRegex = /^\d{6}$/;
+                return pincodeRegex.test(pincode);
+            }
+
+            function isValidAddress(add){
+                return add.trim() !== "";
+            }
+
+            function checkPasswordRules(password, orgName ,email, state, city, pincode,add)
+            {
+                const passwordMismatchMsg = document.getElementById('passwordMismatchMsg');
+                let messages = [];
+
+                if (password.length < 8) {
+                    messages.push("Password must be at least 8 characters long.\n");
+        
+                }
+
+                if (!/[A-Z]/.test(password)) {
+                    messages.push("Password must contain at least one uppercase letter.\n");
+                }
+
+                if (!/[a-z]/.test(password)) {
+                    messages.push("Password must contain at least one lowercase letter.\n");
+                }
+
+                if (!/\d/.test(password)) {
+                    messages.push("Password must contain at least one digit.\n");
+                }
+
+                if (!/[!@#\$%\^&\*\(\)_\+{}\[\]:;<>,.?~\\-]/.test(password)) {
+                    messages.push("Password must contain at least one special character.\n");
+                }
+
+                if (/\s/.test(password)) {
+                    messages.push("Password must not contain spaces.\n");
+                }
+                
+                    passwordMismatchMsg.style.display = 'block';
+                    passwordMismatchMsg.style.marginLeft = '28.5%'; 
+                    passwordMismatchMsg.style.padding = '10px';
+                    passwordMismatchMsg.style.border= '2px solid #205BB2';
+                    return messages; 
+            }
+
+            function togglePasswordVisibility(field, icon) {
+                const fieldType = field.getAttribute('type') === 'password' ? 'text' : 'password';
+                field.setAttribute('type', fieldType);
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            }
+
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#passwrd');
+
+            togglePassword.addEventListener('click', function () {
+                togglePasswordVisibility(password, togglePassword);
+            });
+
+            const toggleConfirm = document.querySelector('#toggleConfirm');
+            const confirm = document.querySelector('#Confirm');
+
+            toggleConfirm.addEventListener('click', function () {
+                togglePasswordVisibility(confirm, toggleConfirm);
+            });
+
+            function validform() 
+            {
+                    const name = document.getElementById('orgname').value
+                    const email = document.getElementById('emailadd').value;
+                    const state = document.getElementById('orgstat').value;
+                    const city = document.getElementById('orgcty').value;
+                    const pincode = document.getElementById('pincode').value;
+                    const add = document.getElementById('orgadd').value;
+
+                    
+                    const isValidNameValue = isValidName(name);
+                    const isValidEmailValue = isValidEmail(email);
+                    const isValidStateValue = isValidState(state);
+                    const isValidCityValue = isValidCity(city);
+                    const isValidPincodeValue = isValidPincode(pincode);
+                    const isValidAddressValue= isValidAddress(add);
+
+                    if (!isValidEmailValue || !isValidStateValue || !isValidCityValue || !isValidPincodeValue ||       !isValidNameValue || !isValidAddressValue) 
+                    {
+
+                        let validationMessages = [];
+
+                        if (!isValidEmailValue) {
+                            validationMessages.push("Invalid email.\n");
+                        }
+                        
+                        if (!isValidStateValue) {
+                            validationMessages.push("State cannot be empty.\n");
+                        }
+                        
+                        if (!isValidCityValue) {
+                            validationMessages.push("City cannot be empty.\n");
+                        }
+                        
+                        if (!isValidPincodeValue) {
+                            validationMessages.push("Invalid pincode (should be 6 digits).\n");
+                        }
+                        if(!isValidNameValue){
+                            validationMessages.push('Enter Valid Organization Name.\n');
+                        }
+                        if(!isValidAddressValue){
+                            validationMessages.push('Enter Address.\n');
+                        }
+
+                        alert(validationMessages.join("\n"));
+                        return;
+                    }
+
+                        const passwordMismatchMsg = document.getElementById('passwordMismatchMsg');
+                        const password = document.getElementById('passwrd').value;
+                        const confirmPassword = document.getElementById('Confirm').value;
+
+                        if (password !== confirmPassword) 
+                        {
+                            passwordMismatchMsg.textContent = "Passwords do not match.";
+                            passwordMismatchMsg.style.display = 'block';
+                            passwordMismatchMsg.style.padding = '5px';
+                            passwordMismatchMsg.style.border = '2px solid #205BB2';
+                            return;
+                        }
+
+        
+                        const passwordRulesMessages = checkPasswordRules(
+                            password,
+                            document.getElementById('orgname').value,
+                            '',
+                            name,
+                            email,
+                            state,
+                            city,
+                            pincode,
+                            add
+                        );
+
+                        if (passwordRulesMessages.length > 0) 
+                        {
+                            passwordMismatchMsg.textContent = passwordRulesMessages.join('');
+                            passwordMismatchMsg.style.display = 'block';
+                            passwordMismatchMsg.style.marginLeft = '28.5%';
+                            passwordMismatchMsg.style.padding = '10px';
+                            passwordMismatchMsg.style.border = '2px solid #205BB2';
+                            return;
+                        }
+
+                        passwordMismatchMsg.style.display = 'none';
+                        alert('Successfully Registered!');
+            }
+
+        </script>
+            <script>
+                var backButton = document.getElementById('previous-arrow');
+                backButton.addEventListener("click", function () {
+                    window.history.back();
+                });
+            </script>
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const toggleButton = document.querySelector('.toggle-button');
+                    const navbarLinks = document.querySelector('.navbar-links');
+        
+                    toggleButton.addEventListener('click', () => {
+                        navbarLinks.classList.toggle('active');
+                    });
+                });
+            </script>
+    </body>
 </html>
