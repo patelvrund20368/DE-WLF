@@ -197,11 +197,11 @@ body {
 /* Main Body */
 
     #wrapper {
-        padding-top: 10%;
+        padding-top: 4%;
         height: 100vh;
         overflow-x: hidden;
         overflow-y: auto;
-        
+        transition: 0.5s;
     }
     
     ::-webkit-scrollbar {
