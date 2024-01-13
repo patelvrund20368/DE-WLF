@@ -2,11 +2,12 @@
 
 * {
 	box-sizing: border-box;
+    margin: 0;
+	padding: 0;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+	
 	background-color: rgb(229, 243, 243);
 }
 
@@ -197,11 +198,6 @@ body {
 
 /* Main part */
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 ::-webkit-scrollbar {
     display: none;
   }
@@ -210,6 +206,7 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-top: 8%;
 }
 
 .container {

@@ -2,17 +2,17 @@
 
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	margin: 0;
-	padding: 0;
 	background-color: rgb(229, 243, 243);
 }
 
 .navbar {
 	display: flex;
-	position: fixed;
+	/* position: fixed; */
 	z-index: 3;
 	width: 100%;
 	justify-content: space-between;
@@ -85,7 +85,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 30px;
-	height: 25px;
+	height: 23px;
 }
 
 .toggle-button .bar {
@@ -197,9 +197,11 @@ body {
 
 /* main body */
 
-/* main{
-    padding-top: 2%;
-} */
+main{
+	padding: 0;
+	margin: 0;
+    /* padding-top: 2%; */
+}
 
 #about-body {
     padding-top: 3%;
@@ -282,29 +284,63 @@ body {
 
 .rescue-track-container {
     /* margin-top: 20px; */
+	font-size: 22px;
+	width: 100%;
     background-color: #40CEED;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
+	display: flex;
+	flex-direction: column;
 }
 
-.rescue-number span{
-    margin-right: 15%;
-    margin-left: 15%;
-    text-align: center;
-    font-size: 200%;
-    color: white;
-    
+.rescue-data{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap:15%;
+	padding: 3%;
 }
 
-.rescue-category span{
-    margin-right: 14%;
-    margin-left: 13%;
-    text-align: center;
-    font-size: 150%;
+.data .num {
+	/* width: 20%; */
+	/* text-align: center; */
+	font-size: 50px;
+	color: #fff;
+	padding: 0%;
+	/* margin: 1%; */
+	margin-bottom: 0.4%;
+	/* display: inline; */
 }
 
-/* Footer Portion */
+.data p {
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	/* margin: 7%; */
+}
+
+@media (max-width: 900px) {
+
+	/* .organization-name{
+		height: 150px;
+	} */
+	.rescue-track-container {
+		/* margin-top: 20px; */
+		font-size: 18px;
+	}
+
+	.rescue-data{
+		display: flex;
+		flex-direction: column;
+		padding: 2%;
+	}
+
+	.data p {
+		padding-bottom: 4%;
+	}
+}
 
 /* Footer Portion */
 
@@ -392,12 +428,14 @@ body {
 	#learn-more,
 	#support,
 	#Company {
+		padding-top: 5%;
 		font-size: 25px;
 	}
 
 	.footer-list {
 		display: grid;
 		place-items: center;
+		padding-top: 2%;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
 	}
