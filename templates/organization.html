@@ -8,48 +8,45 @@
     />
     <link rel="stylesheet" href="../static/organization.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Header -->
 
     <header>
-      <div class="header">
-        <nav class="background">
-          <ul class="navbar">
-            <div class="nav-logo-div">
-              <a href="#" id="previous-arrow">&#8249;</a>
-              <img
-                src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png"
-                id="logo-header"
-              />
-            </div>
-            <div class="nav-list-div">
-              <li class="nav-list">
-                <a class="nav-list-a" href="/">Home</a>
-              </li>
-              <li class="nav-list">
-                <a class="nav-list-a" href="precautions">Precautions</a>
-              </li>
-              <li class="nav-list">
-                <a class="nav-list-a" href="emergency"
-                  >Emergency&nbsp;Kit</a
-                >
-              </li>
-              <li class="nav-list">
-                <div class="dropdown">
-                  <a href="#" class="dropdown-btn">&#9776;</a>
-                  <div class="dropdown-content" id="myDropdown">
-                    <a class="dropdown-item" href="blog">Blog</a>
-                    <a class="dropdown-item" href="gallery">Gallery</a>
-                    <a class="dropdown-item" href="about-us">About Us</a>
-                  </div>
-                </div>
-              </li>
-            </div>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      <nav class="navbar">
+          <div class="logo">
+      <a href="#" id="previous-arrow">&#8249;</a>
+              <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="Logo">
+          </div>
+          <a href="#" class="toggle-button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </a>
+          <div class="navbar-links">
+              <ul>
+                  
+                  <li><a href="organization">Organization</a></li>
+                  <li><a href="precautions">Precautions</a></li>
+                  <li><a href="emergency">Emergency&nbsp;kit</a></li>
+                  <li>
+                      <div class="dropdown">
+                          <a href="#" class="dropdown-btn">&#9776;</a>
+                          <div class="dropdown-content" id="myDropdown">
+                              <a class="dropdown-item" href="blog">Blog</a>
+                              <a class="dropdown-item" href="gallery">Gallery</a>
+                              <a class="dropdown-item" href="about-us">About Us</a>
+                          </div>
+                      </div>
+                  </li>
+                  
+  
+              </ul>
+          </div>
+      </nav>
+  
+  </header>
 
     <!-- Main body -->
     <main>
