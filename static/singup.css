@@ -1,17 +1,18 @@
 /* Header Portion */
+
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	margin: 0;
-	padding: 0;
 	background-color: rgb(229, 243, 243);
 }
 
 .navbar {
 	display: flex;
-	position: fixed;
+	/* position: fixed; */
 	z-index: 3;
 	width: 100%;
 	justify-content: space-between;
@@ -84,7 +85,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 30px;
-	height: 25px;
+	height: 23px;
 }
 
 .toggle-button .bar {
