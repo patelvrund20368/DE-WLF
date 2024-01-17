@@ -244,6 +244,7 @@ main {
 
 /* Footer Portion */
 
+<<<<<<< HEAD
 
 #logo-footer {
     width: 20%;
@@ -259,12 +260,27 @@ main {
 
 #logo-img {
     width: 60%;
+=======
+.footer {
+    background-color: rgb(4, 4, 4);
+}
+
+#logo-img {
+    width: 100%;
+}
+
+.logo-footer {
+    padding-inline: 30%;
+    padding-block: 2%;
+    margin-inline: 2%;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
 }
 
 .footer-list {
     padding-block: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+<<<<<<< HEAD
 }
 
 .logo-footer {
@@ -273,6 +289,13 @@ main {
 }
 
 .footer-li {
+=======
+    text-align: center;
+}
+
+.footer-li {
+    margin-inline: 10%;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     white-space: nowrap;
 }
 
@@ -286,8 +309,14 @@ main {
     color: white;
 }
 
+<<<<<<< HEAD
 .learn-more,
 .company{
+=======
+#learn-more,
+#Company,
+#support {
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     color: gray;
     font-size: 25px;
     height: fit-content;
@@ -298,6 +327,10 @@ main {
 .f-data {
     color: white;
     margin-top: 15px;
+<<<<<<< HEAD
+=======
+    font-size: 15px;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
 }
 
 .footer-a {
@@ -309,6 +342,7 @@ main {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .support {
 	padding-block: 1%;
 	background-color: black;
@@ -351,11 +385,47 @@ main {
 
     .learn-more,
     .company {
+=======
+@media (max-width: 900px) {
+
+    #learn-more,
+    #support,
+    #Company {
+        font-size: 25px;
+    }
+
+    .footer-li li a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    
+    #learn-more,
+    #support,
+    #Company {
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
         font-size: 20px;
     }
 
     .footer-li li a {
         font-size: 15px;
+<<<<<<< HEAD
+=======
+    }
+}
+
+@media (max-width: 500px) {
+
+    #learn-more,
+    #support,
+    #Company {
+        font-size: 15px;
+    }
+
+    .footer-li li a {
+        font-size: 10px;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     }
 
 	.link {
