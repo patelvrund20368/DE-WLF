@@ -172,215 +172,109 @@ body {
         text-decoration: underline;
     }
 }
-/* 
-.nav-logo-div {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-#previous-arrow {
-    text-decoration: none;
-    align-self: center;
-    margin-left: 5%;
-    padding-left: 3%;
-    padding-right: 3%;
-    font-size: 300%;
-    color: black;
-}
-
-#previous-arrow:hover {
-    box-shadow: 1px 1px 10px 5px #13cce0;
-}
-
-#logo-header {
-    height: 80%;
-    width: 50%;
-    margin-left: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-.navbar {
-    display: flex;
-    width: 100%;
-    position: fixed;
-    border-bottom: solid black 2px;
-    background-color: rgb(141, 244, 244);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.nav-list-div {
-    display: flex;
-    align-items: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 20%;
-    margin-right: 7%;
-    justify-content: right;
-}
-
-.nav-list {
-    display: flex;
-    width: fit-content;
-    padding-left: 7%;
-    padding-right: 7%;
-}
-
-.nav-list-a {
-    text-decoration: none;
-    color: black;
-    font-size: 130%;
-}
-
-.dropdown .dropdown-btn {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    font-size: 170%;
-}
-
-.dropdown-item {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    font-size: 120%;
-}
-
-.dropdown-item:hover,
-.nav-list-a:hover,
-.dropdown:hover {
-    color: #1339e0;
-    text-decoration: underline;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(229, 243, 243);
-    width: fit-content;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    border-left: solid black 1px;
-    border-bottom: solid black 2px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    opacity: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-} */
-
 
 /* Body Portion */
-
-.precaution-body {
-    padding-top: 10%;
-    padding-bottom: 2%;
-    background-color: rgb(229, 243, 243);
-    max-width: 100%;
+main {
+    padding-top: 75px;
 }
 
-.help-heading {
-    margin-bottom: 5%;
+.precaution-body {
+    background-color: rgb(229, 243, 243);
+    width: 80%;
+    margin-inline: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#helper-div {
+    background-color: white;
+}
+
+.helper-heading {
+    padding-inline: 3%;
+    padding-block: 3%;
+    text-align: center;
+    font-size: 300%;
+    font-weight: 650;
 }
 
 #wildlife-emergency {
-    margin-bottom: 1%;
-    font-weight: 500;
-    padding-left: 3%;
-    padding-right: 3%;
-    text-decoration: underline;
-}
-
-.help-links {
-    padding-left: 10%;
-    padding-right: 10%;
-    text-align: left;
+    font-size: 180%;
+    font-weight: 400;
+    padding-bottom: 2%;
+    padding-inline: 3%;
     width: fit-content;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 150%;
-    font-weight: 300;
 }
 
 .links {
     width: fit-content;
-    padding-left: 10%;
-    margin-bottom: 3%;
-    list-style: inside;
+    padding-inline: 5%;
+    padding-bottom: 5%;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 130%;
+}
+
+.help-div {
+    width: 100%;
+    margin-block: 5%;
+    padding-inline: 3%;
+    padding-block: 5%;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.help-heading {
+    text-align: justify;
+    font-size: 150%;
 }
 
 .link-in-body {
-    text-decoration: none;
+    list-style-type: disc;
+    width: fit-content;
     color: black;
 }
 
-.link-outof-body {
-    text-decoration: underline;
-    color: black;
-}
-
-.link-in-body:hover, .link-outof-body:hover{
+.link-in-body:hover{
     color: #13cce0;
     text-decoration: underline;
 }
 
-.line-break {
-    border: solid black 1px;
-    width: 102%;
-}
-
-.bird-div , .owl-div, .mammal-div, .turtle-div{
-    margin-top: 3%;
-    text-align: left;
-}
-
 .animal-img {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 10%;
+    width: 90%;
+    margin-inline: 3%;
+    border: solid 1px black;
 }
 
-.help-div, .bird-div, .owl-div, .mammal-div, .turtle-div, .orphan-div, .reunite-div, .transport-div, .help-transport-div {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right: 10%;
-    padding-top: 2%;
-    padding-left: 2%;
-    padding-bottom: 2%;
-    background-color: white;
-    width: 100%;
-    border-left: solid black 1px;
-    border-right: solid black 1px;
-}
-
-.owl-content, .orphan-content, .reunite-content, .transport-content, .help-transport-content {
-    list-style-type: none;
+.content-div {
+    list-style-type: square;
     text-align: justify;
-    margin-top: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
+    font-weight: 300;
+    font-size: 150%;
 }
 
-.reunite-bullets {
-    list-style: inside;
-    padding-left: 10%;
-}
-
-.transport-bullets {
+.reunite-bullets, .transport-bullets {
+    padding-block: 1%;
     list-style: decimal;
+    padding-inline: 5%;
 }
 
-.transport-individual-bullet {
-    margin-bottom: 3%;
-}
 
-.reunite-img {
-    margin-top: 2%;
-    width: 100%;
+@media (max-width: 1000px) {
+
+    .helper-heading {
+        font-size: 25px;
+    }
+
+    #wildlife-emergency {
+        font-size: 20px;
+        white-space: nowrap;
+    }
+    
+    .links {
+        font-size: 15px;
+    }
+
+
 }
 
 /* Footer Portion */
