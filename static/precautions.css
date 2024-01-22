@@ -79,7 +79,6 @@ body {
 
 .toggle-button {
 	position: absolute;
-	top: 2rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
@@ -197,7 +196,9 @@ body {
 
 
 /* Body Portion */
-
+::-webkit-scrollbar{
+	display: none;
+}
 .precaution-body {
     padding-top: 10%;
     padding-bottom: 2%;
@@ -218,10 +219,11 @@ body {
 }
 
 .help-links {
+	
     padding-left: 10%;
-    padding-right: 10%;
+	padding-right: 10%;
     text-align: left;
-    width: fit-content;
+    width: 100vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 150%;
     font-weight: 300;
@@ -259,11 +261,16 @@ body {
     text-align: left;
 }
 
-.animal-img {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 10%;
-}
+
+	.animal-img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		
+	}
+ 
 
 .help-div, .bird-div, .owl-div, .mammal-div, .turtle-div, .orphan-div, .reunite-div, .transport-div, .help-transport-div {
     margin-top: 2%;
@@ -304,7 +311,18 @@ body {
     width: 100%;
 }
 
-/* Footer Portion */
+@media (max-width:900px) {
+	.help-links{
+		margin-top: 5%;
+	}
+}
+@media (max-width:600px) {
+	.help-links{
+		margin-top: 15%;
+	}
+}
+
+
 
 /* Footer Portion */
 
@@ -317,6 +335,7 @@ body {
 }
 
 .footer {
+	height: 80vh;
 	background-color: rgb(4, 4, 4);
 	padding-left: 0.1%;
 	padding-bottom: 8%;
@@ -386,13 +405,13 @@ body {
 
 
 	.footer-li li a {
-		font-size: small;
+		font-size: medium;
 	}
 
 	#learn-more,
 	#support,
 	#Company {
-		font-size: 25px;
+		font-size: 30px;
 	}
 
 	.footer-list {
@@ -422,13 +441,28 @@ body {
 }
 
 @media (max-width: 600px) {
-	.footer-list {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .footer{
+        height: 90vh;
+        padding: 0;
+    }
 
-	#logo-footer {
-		margin-left: 38%;
-	}
-}
+    .footer-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #learn-more,
+    #support,
+    #Company {
+        padding-left: 0;
+    }
+    #support{
+        margin-bottom: 0;
+    }
+    #logo-footer{
+        display: flex;
+        justify-content: center;
+    }
+    }
