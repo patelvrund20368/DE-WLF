@@ -78,7 +78,6 @@ body {
 
 .toggle-button {
 	position: absolute;
-	top: 2rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
@@ -253,11 +252,19 @@ body {
         filter: grayscale(0%);
     }
     @media (max-width:900px) {
+        .container h1{
+            margin-top: 10%;
+           
+        }
         .card{
             width: 33%;
         }
     }
     @media (max-width:600px) {
+        .container h1{
+            margin-top: 15%;
+           
+        }
         .card{
             width: 50%;
         }
@@ -265,123 +272,144 @@ body {
     
     /* Footer Portion */
 
-    #logo-footer {
-        width: 20%;
-        padding-bottom: 4px;
-        border-bottom: 2px solid white;
-        margin-right: -20px;
-        border-radius: 2px;
-    }
+#logo-footer {
+    width: 20%;
+    padding-bottom: 4px;
+    border-bottom: 2px solid white;
+    margin-right: -20px;
+    border-radius: 2px;
+}
 
-    .footer {
-        background-color: rgb(4, 4, 4);
-        padding-left: 0.1%;
-        padding-bottom: 8%;
-        border-top: solid black 2px;
-        align-items: start;
-    }
+.footer {
+    height: 80vh;
+    background-color: rgb(4, 4, 4);
+    padding-left: 0.1%;
+    padding-bottom: 8%;
+    border-top: solid black 2px;
+    align-items: start;
+}
 
-    .footer-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-items: start;
-        margin-left: 0;
-    }
+.footer-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: start;
+    margin-left: 0;
+}
 
-    .footer-li li {
-        list-style: none;
-        top: 0;
-    }
+.footer-li li {
+    list-style: none;
+    top: 0;
+}
 
-    .footer-li li a {
-        text-decoration: none;
-        font-size: 22px;
-        color: white;
-    }
-
-
-    #learn-more,
-    #Company,
-    #support {
-        top: 0;
-        color: gray;
-        font-size: 30px;
-        height: fit-content;
-        min-width: 169px;
-    }
-
-    .f-data {
-        color: white;
-        margin-top: 18px;
-        font-size: 15px;
-
-    }
-
-    .footer-a {
-        width: fit-content;
-    }
+.footer-li li a {
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+}
 
 
-    .footer-a:hover {
-        color: #13cce0;
-        text-decoration: underline;
-    }
+#learn-more,
+#Company,
+#support {
+    top: 0;
+    color: gray;
+    font-size: 30px;
+    height: fit-content;
+    min-width: 169px;
+    padding-left: 40px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.f-data {
+    color: white;
+    margin-top: 18px;
+    font-size: 15px;
+
+}
+
+.footer-a {
+    width: fit-content;
+}
+
+
+.footer-a:hover {
+    color: #13cce0;
+    text-decoration: underline;
+}
 
 
 @media (max-width: 900px) {
-    #logo-footer {
-       display: grid;
-       place-items: center;
-        margin-left: 30%;
-        margin-right: auto;
-        width: 40%;
-    }
-    
 
-    .footer-li li a {
-        font-size: small;
-    }
 
-    #learn-more,
-    #support,
-    #Company {
-        font-size: 25px;
-    }
+#logo-footer {
+   display: grid;
+   place-items: center;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 40%;
+}
 
-    .footer-list {
-        display: grid;
-        place-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-    }
 
-    .footer-list>div:nth-child(2) {
-        grid-column: 1;
-        grid-row: 1;
-    }
+.footer-li li a {
+    font-size: medium;
+}
 
-    .footer-list>div:nth-child(3) {
-        grid-column: 2;
-        grid-row: 1;
-    }
+#learn-more,
+#support,
+#Company {
+    font-size: 30px;
+}
 
-    .footer-list>div:nth-child(4) {
-        grid-column: 1;
-        grid-row: 2;
-        place-items: center;    
-    }
+.footer-list {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.footer-list>div:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.footer-list>div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.footer-list>div:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    place-items: center;    
+}
 
 
 }
 
 @media (max-width: 600px) {
+    .footer{
+        height: 90vh;
+        padding: 0;
+    }
+
     .footer-list {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
-    #logo-footer{
-        margin-left: 38%;
+    #learn-more,
+    #support,
+    #Company {
+        padding-left: 0;
     }
-}
+    #support{
+        margin-bottom: 0;
+    }
+    #logo-footer{
+        display: flex;
+        justify-content: center;
+    }
+    }

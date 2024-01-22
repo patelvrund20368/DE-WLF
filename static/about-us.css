@@ -79,7 +79,6 @@ body {
 
 .toggle-button {
 	position: absolute;
-	top: 2rem;
 	right: 1rem;
 	display: none;
 	flex-direction: column;
@@ -201,6 +200,11 @@ body {
 main{
     padding-top: 8%;
 }
+
+::-webkit-scrollbar{
+	display: none;
+}
+
 #about-body {
     padding-top: 3%;
     padding-bottom: 3%;
@@ -254,7 +258,9 @@ main{
 }
 @media (max-width:900px) {
     #Heading-About-Us{
-        margin-top: 1%;
+        margin-top: 2%;
+		font-size: 250%;
+		
     }
     body {
         font-size: 14px; /* Adjust as needed */
@@ -267,7 +273,6 @@ main{
     .sub-bullet,
     .sub-point,
     .points,
-    #Heading-About-Us,
     .footer-li li a,
     #learn-more,
     #Company,
@@ -278,8 +283,8 @@ main{
 
 @media (max-width:650px) {
     #Heading-About-Us{
-        margin-top: 6%;
-       
+        margin: 15% 0 7% 0 ;
+ 
     }
    
     
@@ -288,126 +293,142 @@ main{
 /* Footer Portion */
 
 #logo-footer {
-	width: 20%;
-	padding-bottom: 4px;
-	border-bottom: 2px solid white;
-	margin-right: -20px;
-	border-radius: 2px;
+    width: 20%;
+    padding-bottom: 4px;
+    border-bottom: 2px solid white;
+    margin-right: -20px;
+    border-radius: 2px;
 }
 
 .footer {
-	background-color: rgb(4, 4, 4);
-	padding-left: 0.1%;
-	padding-bottom: 8%;
-	border-top: solid black 2px;
-	align-items: start;
+    height: 80vh;
+    background-color: rgb(4, 4, 4);
+    padding-left: 0.1%;
+    padding-bottom: 8%;
+    border-top: solid black 2px;
+    align-items: start;
 }
 
 .footer-list {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	justify-items: start;
-	margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: start;
+    margin-left: 0;
 }
 
 .footer-li li {
-	list-style: none;
-	top: 0;
+    list-style: none;
+    top: 0;
 }
 
 .footer-li li a {
-	text-decoration: none;
-	font-size: 22px;
-	color: white;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
 }
 
 
 #learn-more,
 #Company,
 #support {
-	top: 0;
-	color: gray;
-	font-size: 30px;
-	height: fit-content;
-	min-width: 169px;
+    top: 0;
+    color: gray;
+    font-size: 30px;
+    min-width: 169px;
+    padding-left: 40px;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .f-data {
-	color: white;
-	margin-top: 18px;
-	font-size: 15px;
+    color: white;
+    margin-top: 18px;
+    font-size: 15px;
 
 }
 
 .footer-a {
-	width: fit-content;
+    width: fit-content;
 }
 
 
 .footer-a:hover {
-	color: #13cce0;
-	text-decoration: underline;
+    color: #13cce0;
+    text-decoration: underline;
 }
 
 
 @media (max-width: 900px) {
-	.main {
-		padding-top: 20%;
-	}
-
-	#logo-footer {
-		display: grid;
-		place-items: center;
-		margin-left: 30%;
-		margin-right: auto;
-		width: 40%;
-	}
 
 
-	.footer-li li a {
-		font-size: small;
-	}
+#logo-footer {
+   display: grid;
+   place-items: center;
+    margin-left: 30%;
+    margin-right: auto;
+    width: 40%;
+}
 
-	#learn-more,
-	#support,
-	#Company {
-		font-size: 25px;
-	}
 
-	.footer-list {
-		display: grid;
-		place-items: center;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-	}
+.footer-li li a {
+    font-size: medium;
+}
 
-	.footer-list>div:nth-child(2) {
-		grid-column: 1;
-		grid-row: 1;
-	}
+#learn-more,
+#support,
+#Company {
+    font-size: 30px;
+}
 
-	.footer-list>div:nth-child(3) {
-		grid-column: 2;
-		grid-row: 1;
-	}
+.footer-list {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 
-	.footer-list>div:nth-child(4) {
-		grid-column: 1;
-		grid-row: 2;
-		place-items: center;
-	}
+.footer-list>div:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.footer-list>div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.footer-list>div:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    place-items: center;    
+}
 
 
 }
 
 @media (max-width: 600px) {
-	.footer-list {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .footer{
+        height: 90vh;
+        padding: 0;
+    }
 
-	#logo-footer {
-		margin-left: 38%;
-	}
-}
+    .footer-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #learn-more,
+    #support,
+    #Company {
+        padding-left: 0;
+    }
+    #support{
+        margin-bottom: 0;
+    }
+    #logo-footer{
+        display: flex;
+        justify-content: center;
+    }
+    }
