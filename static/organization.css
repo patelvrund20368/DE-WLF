@@ -94,7 +94,21 @@ body {
 	background-color: black;
 	border-radius: 10px;
 }
+.toggle-button.cross span {
+    transition: transform 0.3s ease-out;
+}
 
+.toggle-button.cross span:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+}
+
+.toggle-button.cross span:nth-child(2) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.toggle-button.cross span:nth-child(3) {
+    display: none;
+}
 .dropdown {
 	display: block;
 }

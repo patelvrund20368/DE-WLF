@@ -93,7 +93,21 @@ body {
 	background-color: black;
 	border-radius: 10px;
 }
+.toggle-button.cross span {
+    transition: transform 0.3s ease-out;
+}
 
+.toggle-button.cross span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.toggle-button.cross span:nth-child(2) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.toggle-button.cross span:nth-child(3) {
+    display: none;
+}
 .dropdown {
 	display: block;
 }
@@ -268,9 +282,11 @@ input {
 
 #passwordMismatchMsg::before{
     border: none;
+    display: none;
 }
 
 #passwordMismatchMsg{
+    /* display: block; */
     width: 50%;
     color: red;
     white-space: pre-line;
@@ -278,12 +294,18 @@ input {
     text-align: justify;
     justify-content: center;
     border-radius: 7px;
+   
 }
 #toggleConfirm,#togglePassword{
     cursor: pointer;
 }
 .mismatch{
-    display: none;
+    display: block;
+    max-width: 100%;
+    width: 80%;
+    margin-left: 40%;
+    margin-top: 1%;
+    
 }
 br {
     margin-bottom: 10px;
@@ -321,6 +343,88 @@ a {
    
 }
 
+.mismatch #passwordMismatchMsg{
+    margin-left: 0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top:7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-header {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.circular {
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid cornflowerblue;
+  
+   
+    /* Ensures the content doesn't overflow */
+  }
+  
+
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 @media (max-width: 1073px) {
     
@@ -350,9 +454,11 @@ a {
     }
 
     #passwordMismatchMsg {
-        width: 70%;
+        width: 75%;
     }
-   
+   .mismatch{
+    margin-left: 34%;
+   }
 }
 
 
@@ -361,6 +467,11 @@ a {
         max-width: 90%;
         margin-left: 5%;
         margin-top: 17%;
+    }
+    .navbar-links{
+        top:6%;
+        margin-top: 0;
+        
     }
     .information{
         width: auto;
@@ -387,10 +498,13 @@ a {
     }
 
     #passwordMismatchMsg {
-        width: 90%;
+        width: 100%;
     }
     .signin{
         display: inline-flex;
+    }
+    .mismatch{
+        margin-left: 0;
     }
     p{
         margin: 0;

@@ -52,50 +52,63 @@
                 </div>
 
                 <div class="information">
-                    <label for="orgname">Organization Name:</label>
-                    <input type="text" id="orgname" name="org name" placeholder="Enter Organization Name" required>
+                    <label for="organame">Organization Name:</label>
+                    <input type="text" id="orgname" name="organame" placeholder="Enter Organization Name" required>
                     <br>
-                    <label for="emailadd">Email:</label>
+                    <label for="email">Email:</label>
                     <input type="email" id="emailadd" name="email" placeholder="Enter Email Address" required>
                     <br>
                     <div class="password-container">
                     <label for="pass">Password:</label>
-                        <input type="text" id="passwrd" name="pass" placeholder="Enter Password" required>
+                        <input type="password" id="passwrd" name="pass" placeholder="Enter Password" required>
                         <i class="far fa-eye" id="togglePassword"></i>
                     </div>
                     <br>
 
                     <div class="password-container">
-                    <label for="Confirm">Confirm Password:</label>
-                        <input type="text" id="Confirm" name="cnfrmpasswrd" placeholder="Rewrite Password" required>
+                    <label for="cnfrmpasswrd">Confirm Password:</label>
+                        <input type="password" id="Confirm" name="cnfrmpasswrd" placeholder="Rewrite Password" required>
                         <i class="far fa-eye" id="toggleConfirm"></i>
                         <div class="mismatch">
                             <p id="passwordMismatchMsg"></p>
                         </div>
                     </div>
                     <br>
-                    <label for="orgadd">Address:</label>
+                    <label for="org add">Address:</label>
                     <input type="text" id="orgadd" name="org add" placeholder="Enter Organization's Address" required>
                     <br>
-                    <label for="orgstat">State:</label>
+                    <label for="state">State:</label>
                     <input type="text" id="orgstat" name="state" placeholder="Enter Your State" required>
                     <br>
-                    <label for="orgcty">City:</label>
+                    <label for="city">City:</label>
                     <input type="text" id="orgcty" name="city" placeholder="Enter Your City" required>
                     <br>
-                    <label for="pincode">Pin-Code:</label>
+                    <label for="PIN">Pin-Code:</label>
                     <input type="text" id="pincode" name="PIN" placeholder="Enter 6 Digit Pin-Code" required>
                     <br>
-                    <label for="link">Organization URL:</label>
+                    <label for="url">Organization URL:</label>
                     <input type="url" id="link" name="url" placeholder="Enter Your Organization's URL" required>
                     <div class="btn">
-                        <button type="submit" id="sbmit" value="submit" onclick="validform()" hre="../templates/login.html">Register</button>
+                        <button type="submit" id="sbmit" value="submit" onclick="validform()" href="../templates/login.html">Register</button>
                     </div>
                     <div class="signin">
                         <p>Already have an Account?</p>
                         <a href="../templates/login.html">Sign in</a>
                     </div>
                 </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <div class="popup-header">
+                            <div class="circle">
+                                <img src="../static/Bird.jpeg" alt="Bird" class="circular">
+                            </div>
+                        </div>
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <p id="popup-message"></p>
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
 
@@ -203,7 +216,6 @@
                 }
                 
                     passwordMismatchMsg.style.display = 'block';
-                    passwordMismatchMsg.style.marginLeft = '28.5%'; 
                     passwordMismatchMsg.style.padding = '10px';
                     passwordMismatchMsg.style.border= '2px solid #205BB2';
                     return messages; 
@@ -298,6 +310,7 @@
                             passwordMismatchMsg.style.display = 'block';
                             passwordMismatchMsg.style.padding = '5px';
                             passwordMismatchMsg.style.border = '2px solid #205BB2';
+                            
                             return;
                         }
 
@@ -318,14 +331,29 @@
                         {
                             passwordMismatchMsg.textContent = passwordRulesMessages.join('');
                             passwordMismatchMsg.style.display = 'block';
-                            passwordMismatchMsg.style.marginLeft = '28.5%';
                             passwordMismatchMsg.style.padding = '10px';
                             passwordMismatchMsg.style.border = '2px solid #205BB2';
                             return;
                         }
+                        else{
 
-                        passwordMismatchMsg.style.display = 'none';
-                        alert('Successfully Registered!');
+                            passwordMismatchMsg.style.display = 'none';
+                            const popup = document.getElementById('popup');
+                            const popupMessage = document.getElementById('popup-message');
+
+                            popup.style.display = 'block';
+                            popupMessage.textContent = 'Successfully Registered!';
+
+                            
+                            setTimeout(() => {
+                                closePopup();
+                                window.location.href = '../templates/login.html';
+                            }, 2000);
+                            function closePopup() {
+                                    const popup = document.getElementById('popup');
+                                    popup.style.display = 'none';
+                                }
+                        }
             }
 
         </script>
@@ -342,6 +370,7 @@
         
                     toggleButton.addEventListener('click', () => {
                         navbarLinks.classList.toggle('active');
+                        toggleButton.classList.toggle('cross');
                     });
                 });
             </script>
