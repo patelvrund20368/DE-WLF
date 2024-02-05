@@ -14,9 +14,9 @@ def rescue():
 def about_us():
     return render_template("about-us.html")
 
-@app.route("/blog")
+@app.route("/Blog")
 def blog():
-    return render_template("blog.html")
+    return render_template("Blog.html")
 
 @app.route("/emergency")
 def emergency():
@@ -38,7 +38,7 @@ def organization():
 def precaution():
     return render_template("precautions.html")
 
-@app.route("/signup")
+@app.route("/signup", methods=['post', 'get'])
 def signup():
     return render_template("singup.html")
 
