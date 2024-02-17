@@ -24,7 +24,6 @@ body {
 }
 
 #previous-arrow {
-	visibility: hidden;
 	text-decoration: none;
 	align-self: center;
 	width: 40px;
