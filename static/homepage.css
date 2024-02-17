@@ -124,8 +124,9 @@ body {
 }
 
 .header-link:hover {
-	color: #1339e0;
-	text-decoration: underline;
+	border: solid 1px black;
+	border-radius: 15px;
+	background-color: aqua;
 }
 
 @media (max-width: 1000px) {
@@ -165,16 +166,6 @@ body {
 		margin-inline: 5%;
 	}
 
-	.header-link:hover {
-		color: #1339e0;
-		background-color: #13cce0;
-		text-decoration: underline;
-		border-left: solid black 1px;
-		border-right: solid black 2px;
-		border-top: solid black 1px;
-		border-bottom: solid black 2px;
-		border-radius: 25px;
-	}
 }
 
 /* main body css */
@@ -421,7 +412,7 @@ button:hover {
 }
 
 .learn-more,
-.Company{
+.company{
     color: gray;
     font-size: 25px;
     height: fit-content;
@@ -484,7 +475,7 @@ button:hover {
 	}
 
     .learn-more,
-    .Company {
+    .company {
         font-size: 20px;
     }
 
@@ -501,7 +492,7 @@ button:hover {
 @media (max-width: 700px) {
 
     .learn-more,
-    .Company {
+    .company {
         font-size: 20px;
 		padding: 3%;
     }
