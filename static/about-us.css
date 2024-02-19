@@ -228,7 +228,7 @@ main{
 }
 
 @media (max-width:900px) {
-    #heading-about-us {
+    #about-body {
         padding-top: 5%;
     }
 
@@ -252,8 +252,11 @@ main{
         margin-inline: auto;
     }
 
-    #heading-about-us {
+    #about-body {
         padding-top: 7%;
+    }
+    
+    #heading-about-us {
         font-size: 25px;
     }
 
@@ -274,9 +277,12 @@ main{
     }
 }
 
-@media (max-width:500px) {
-    #heading-about-us {
+@media (max-width:600px) {
+    #about-body {
         padding-top: 15%;
+    }
+    
+    #heading-about-us {
         font-size: 23px;
     }
 
@@ -300,8 +306,8 @@ main{
     }
 }
 
-@media (max-width:300px) {
-    #heading-about-us {
+@media (max-width:400px) {
+    #about-body {
         padding-top: 25%;
     }
 }
