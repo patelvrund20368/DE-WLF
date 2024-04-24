@@ -380,48 +380,39 @@ main{
     padding-top: 10%;
 =======
 main {
-    padding-top: 5%;
->>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
+    padding-top: 10%;
 }
 
 #emergency-body {
-    padding-block: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     background-color: rgb(229, 243, 243);
 }
 
-.site-content {
+.Site-content {
     max-width: 90%;
     margin: auto;
     text-align: left;
-    padding-block: 3%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
-#heading-rescue-kit {
-    padding-block: 1%;
-    margin-inline: auto;
-    width: 80%;
-    color: #205BB2;
-    font-size: 200%;
-    font-weight: 900;
-    text-align: center;
-}
-
-#heading-rescue-kit:hover {
-    background-color: aqua;
-    border: solid 1px black;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px 0 rgb(137, 135, 135);
+#Heading-Rescue-Kit {
+    font-size: 300%;
+    font-weight: 650;
 }
 
 #starter {
     display: flex;
-    font-size: 150%;
-    font-weight: 400;
-    margin-block: 1%;
+    font-size: 200%;
+    padding-right: 3%;
+    margin-top: 3%;
 }
 
 .points {
-    padding-inline: 3%;
+    margin-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .points-header {
@@ -429,21 +420,16 @@ main {
 }
 
 .sub-list {
-    letter-spacing: 0.05rem;
-    font-size: 110%;
-    padding-inline: 2%;
+    font-weight: 300;
+    font-size: 130%;
+    padding-left: 3%;
     text-align: justify;
-}
-
-.sub-list>li {
-    padding-block: 0.5%;
 }
 
 .points-seperator {
     border: solid black .5px;
-    margin-block: 3%;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px 0 rgb(137, 135, 135);
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .link-in-body {
@@ -455,29 +441,11 @@ main {
     color: #13cce0;
 }
 
-<<<<<<< HEAD
 @media (max-width:900px) {
-    .Site-content{
-        font-size: small;
-=======
-@media (max-width: 900px) {
-    #heading-rescue-kit {
-        font-size: 30px;
-        padding-block: 1%;
+    .Site-content {
+        font-size: 100%;
     }
 
-    #starter {
-        font-size: 23px;
-    }
-
-    .points {
-        font-size: 20px;
-    }
-
-    .sub-list {
-        font-size: 15px;
->>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
-    }
 }
 <<<<<<< HEAD
 @media (max-width:600px) {
@@ -485,36 +453,16 @@ main {
         font-size: smaller;
 =======
 
-@media (max-width: 700px) {
-
-    main {
-        padding-top: 20%;
-        width: 90%;
-        margin-inline: auto;
-    }
-    
-    #heading-rescue-kit {
-        font-size: 25px;
-    }
-
-    #starter {
-        padding-block: 3%;
-        font-size: 20px;
-    }
-
-    .points {
-        font-size: 15px;
-    }
-
-    .sub-list {
-        font-size: 13px;
->>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
+@media (max-width:600px) {
+    .Site-content {
+        font-size: 50%;
     }
 }
 
 /* Footer Portion */
 
 <<<<<<< HEAD
+
 #logo-footer {
     width: 20%;
     padding-bottom: 4px;
@@ -524,26 +472,32 @@ main {
 }
 
 .footer {
-	height: 80vh;
-    background-color: rgb(4, 4, 4);
-    padding-left: 0.1%;
-    padding-bottom: 8%;
-    border-top: solid black 2px;
-    align-items: start;
-=======
-.footer {
     background-color: rgb(41, 41, 41);
 }
 
 #logo-img {
     width: 60%;
->>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
+=======
+.footer {
+    background-color: rgb(4, 4, 4);
+}
+
+#logo-img {
+    width: 100%;
+}
+
+.logo-footer {
+    padding-inline: 30%;
+    padding-block: 2%;
+    margin-inline: 2%;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
 }
 
 .footer-list {
     padding-block: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+<<<<<<< HEAD
 }
 
 .logo-footer {
@@ -552,6 +506,13 @@ main {
 }
 
 .footer-li {
+=======
+    text-align: center;
+}
+
+.footer-li {
+    margin-inline: 10%;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     white-space: nowrap;
 }
 
@@ -565,8 +526,14 @@ main {
     color: white;
 }
 
+<<<<<<< HEAD
 .learn-more,
 .company{
+=======
+#learn-more,
+#Company,
+#support {
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     color: gray;
     font-size: 25px;
     height: fit-content;
@@ -584,6 +551,10 @@ main {
 .f-data {
     color: white;
     margin-top: 15px;
+<<<<<<< HEAD
+=======
+    font-size: 15px;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
 }
 
 .footer-a {
@@ -595,6 +566,7 @@ main {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .support {
 	padding-block: 1%;
 	background-color: black;
@@ -645,11 +617,47 @@ main {
 
     .learn-more,
     .company {
+=======
+@media (max-width: 900px) {
+
+    #learn-more,
+    #support,
+    #Company {
+        font-size: 25px;
+    }
+
+    .footer-li li a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    
+    #learn-more,
+    #support,
+    #Company {
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
         font-size: 20px;
     }
 
     .footer-li li a {
         font-size: 15px;
+<<<<<<< HEAD
+=======
+    }
+}
+
+@media (max-width: 500px) {
+
+    #learn-more,
+    #support,
+    #Company {
+        font-size: 15px;
+    }
+
+    .footer-li li a {
+        font-size: 10px;
+>>>>>>> b61059a (Modified footer and made into responsive of emergency page)
     }
 
 	.link {
