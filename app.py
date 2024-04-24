@@ -26,9 +26,9 @@ def emergency():
 def gallery():
     return render_template("gallery.html")
 
-@app.route("/login")
+@app.route("/login", methods=['POST', 'GET'])
 def login():
-    return render_template("login.html")
+    return render_template("organization.html")
 
 @app.route("/organization")
 def organization():
@@ -38,9 +38,13 @@ def organization():
 def precaution():
     return render_template("precautions.html")
 
+<<<<<<< HEAD
 @app.route("/signup", methods=['post', 'get'])
+=======
+@app.route("/signup", methods=['POST', 'GET'])
+>>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
 def signup():
-    return render_template("singup.html")
+    return render_template("organization.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=4000, debug=True)
