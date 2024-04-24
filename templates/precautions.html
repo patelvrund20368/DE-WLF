@@ -2,27 +2,37 @@
 <html lang="en">
     <head>
         <meta charset="='utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <link rel="stylesheet" href="../static/precautions.css" />
+        <link rel="stylesheet" href="../static/precautions.css" />
         <title>Precaution</title>
     </head>
     <body>
-        <header class="header">
-            <div class="logo-div">
-                <a href="#" id="previous-arrow">&#8249;</a>
-                <img id="logo" src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" alt="Logo">
+    
+        <header>
+            <div class= "header">
+                <nav class="background">
+                    <ul class="navbar">
+                        <div class="nav-logo-div">
+                            <a href="#" id="previous-arrow">&#8249;</a>
+                            <img src="https://i.ibb.co/hfZtrzg/logo1-removebg-preview.png" id="logo-header"/>
+                        </div>
+                        <div class="nav-list-div">
+                            <li class="nav-list"><a class="nav-list-a" href="/">Home</a></li>
+                            <li class="nav-list"><a class="nav-list-a" href="precautions">Precautions</a></li>
+                            <li class="nav-list"><a class="nav-list-a" href="emergency">Emergency&nbsp;Kit</a></li>
+                            <li class="nav-list">
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-btn">&#9776;</a>
+                                    <div class="dropdown-content" id="myDropdown">
+                                        <a class="dropdown-item" href="blog">Blog</a>
+                                        <a class="dropdown-item" href="gallery">Gallery</a>
+                                        <a class="dropdown-item" href="about-us">About Us</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-button-container">
-                <div class="menu-button"></div>
-            </label>
-            <ul class="menu">
-                <li><a href="/" class="header-link">Home</a></li>
-                <li><a href="emergency" class="header-link">Emergency</a></li>
-                <li><a href="blog" class="header-link">Blog</a></li>
-                <li><a href="gallery" class="header-link">Gallery</a></li>
-                <li><a href="about-us" class="header-link">About&nbsp;Us</a></li>
-            </ul>
         </header>
 
         <main>
@@ -145,31 +155,36 @@
             </section>
         </main>
 
-        <footer class="footer">
-            <div class="footer-list">
-                <div class="logo-footer">
-                    <img alt="logo-footer" src="../static/Images/logo-wlr.png" id="logo-img"/>
-                </div>
-                <div class="footer-li learn-more">
-                    <ul><b>Learn More</b>
-                        <div class="f-data">
-                            <li><a class="footer-a" href="/">Home</a></li>                        
+        <footer>
+            <div class= "footer">
+                <img id="logo-footer" src="https://i.ibb.co/LSX9KgQ/logo1.png" />
+                <hr id="line-below-logo-footer"/>
+                <div class="footer-list">
+                    <ul class="learn-more"><b>Learn More</b>
+                        <div class="learn-more-div">
+                            <li><a class="footer-a" href="homepage">Home</a></li>                        
                             <li><a class="footer-a" href="precautions">Precautions</a></li>
                             <li><a class="footer-a" href="emergency">Emergency Kit</a></li>
                             <li><a class="footer-a" href="#">Reviews</a></li>
                         </div>
                     </ul>
-                </div>
-                <div class="footer-li company">
-                    <ul><b>Team</b>
-                        <div class="f-data">
+                    <ul class="company"><b>Company</b>
+                        <div class="company-div">
                             <li><a class="footer-a" href="about-us">About Us</a></li>                        
                             <li><a class="footer-a" href="gallery">Gallery</a></li>
                             <li><a class="footer-a" href="blog">Blogs</a></li>
-                            <li><a class="footer-a" href="login">Organizations</a></li>
+                            <li><a class="footer-a" href="#">Organizations</a></li>
+                        </div>
+                    </ul>
+                    <ul class="support"><b>Support</b>
+                        <div class="support-div">
+                            <li id="mobile-number">(+91)9537300286</li>
+                            <li><a class="footer-a" href="#">Contact Us</a></li>
+                            <li><a class="footer-a" href="#">FAQ</a></li>
                         </div>
                     </ul>
                 </div>
+                    
             </div>
             <div class="support"> 
                 <text class="find-me">Find us on social media | Contact Us: +91 9537300286</text>
@@ -223,5 +238,6 @@
                 window.history.back();
             });
         </script>
+    </body>
     </body>
 </html>    
