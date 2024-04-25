@@ -38,11 +38,7 @@ def organization():
 def precaution():
     return render_template("precautions.html")
 
-<<<<<<< HEAD
-@app.route("/signup", methods=['post', 'get'])
-=======
 @app.route("/signup", methods=['POST', 'GET'])
->>>>>>> 3074b10f1f5fa34cf4349b12a8d59a5172e43911
 def signup():
     return render_template("organization.html")
 
