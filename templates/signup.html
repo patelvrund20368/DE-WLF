@@ -32,17 +32,26 @@
     <main>        
         <section class="signup">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
+                <form action="/signup" method="POST" id="signup-form" class="signup-form">
                     <h2 class="form-title">Create account</h2>
                     <p class="signup-text">Sign up with us by creating an account.</p>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="flashes">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
                     <div class="form-group">
-                        <input type="text" class="form-input" name="name" id="name" placeholder="Organization Name" required/>
+                        <input type="text" class="form-input" name="organization_name" id="organization_name" placeholder="Organization Name" required/>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" name="email" id="email" placeholder="Organization Email" required/>
+                        <input type="email" class="form-input" name="organization_email" id="organization_email" placeholder="Organization Email" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="password" id="password" placeholder="Password" required/>
+                        <input type="password" class="form-input" name="password" id="password" placeholder="Password" required/>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
@@ -50,18 +59,19 @@
                     </div>
                     <div class="form-group agree-term">
                         <input type="checkbox" name="agree-term" id="agree-term" required/>
-                        <label for="agree-term" class="label-agree-term">I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        <label for="agree-term" class="label-agree-term">I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" required/>
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
                     </div>
                 </form>
                 <p class="loginhere">
-                    Have already an account ? <a href="login" class="loginhere-link">Login here</a>
+                    Already have an account? <a href="login" class="loginhere-link">Login here</a>
                 </p>
             </div>
         </section>
     </main>
+    
     <footer class="footer">
         <div class="footer-list">
             <div class="logo-footer">
