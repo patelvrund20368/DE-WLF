@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+wlr/
 # C extensions
 *.so
 
@@ -80,6 +80,7 @@ celerybeat-schedule
 
 # virtualenv
 venv/
+venv-f/
 ENV/
 
 # Spyder project settings
