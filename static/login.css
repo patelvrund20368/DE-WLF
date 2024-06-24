@@ -168,6 +168,21 @@ body {
 
 /* Main Portion */
 
+.flash {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.flash.danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
 ::-webkit-scrollbar {
   display: none;
 }

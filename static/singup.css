@@ -167,6 +167,36 @@ body {
 }
 
 /* Main body */
+/* Flash message styles */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.flashes li {
+    background-color: #f0f4c3;
+    color: #333;
+    border: 1px solid #d0e0b0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.flashes li.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.flashes li.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
 
 main {
     padding-top: 7%;

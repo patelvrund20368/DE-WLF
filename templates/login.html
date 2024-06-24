@@ -29,29 +29,40 @@
         </ul>
     </header>
     <main>
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
         <section class="login">
             <div class="login-content">
-                <form method="POST" id="login-form" class="login-form">
+                <form action="/login" method="POST" id="login-form" class="login-form">
                     <div class="logo1">
                         <a href="/"><img src="../static/Images/logo-wlr-removebg.png" alt="sitelogo" /></a>
                     </div>
                     <p class="p">Don't have an account? <a href="signup">Sign up</a></p><br>
                     <div class="form-group">
-                        <label class="labels" for="email">Email Address:</label>
-                        <input type="email" class="form-input" name="email" id="email" placeholder="Organization Email" required/>
+                        <label class="labels" for="organization_email">Email Address:</label>
+                        <input type="email" class="form-input" name="organization_email" id="organization_email" placeholder="Organization Email" required/>
                     </div>
                     <div class="form-group">
-                        <label class="labels" for="pswrd">Password:</label>
-                        <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Password" required/>
+                        <label class="labels" for="password">Password:</label>
+                        <input type="password" class="form-input" name="password" id="password" placeholder="Password" required/>
                     </div>
                     <p class="p"><a href="">Reset Password</a></p>
                     <div class="form-group">
-                        <a href="organization"><input type="submit" name="submit" id="submit" class="form-submit" value="Login" required/></a>
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Login" required/>
                     </div>
                 </form>
             </div>
         </section>
     </main>
+    
 
     <footer class="footer">
         <div class="footer-list">
