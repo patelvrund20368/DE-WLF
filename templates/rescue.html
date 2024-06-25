@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rescue</title>
   <link rel="stylesheet" href="../static/rescue.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -38,7 +42,7 @@
             <input class="input-tag" type="text" name="name" placeholder="xyzw"><br><br>
             <label for="phoneNo">Contact No:&#160;</label>
             <input class="input-tag" type="tel" name="phoneNo"  placeholder="9999999999"><br><br>
-            <button type="button" id="request-button" onclick="changeContent()">Send request</button>
+            <button type="button" id="request-button" onclick="submitForm(); changeContent();">Send request</button>
           </div>
         </div>
         <div class="temp-content">
@@ -114,7 +118,7 @@
             <a href="" class="link" id="linkedin">
                 <svg height="100%"
                     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-                    version="1.1" width="100%" xml:space="preserve" role="img" viewBox="0 0 24 24"" xmlns="
+                    version="1.1" width="100%" xml:space="preserve" role="img" viewBox="0 0 24 24" xmlns="
                     http://www.w3.org/2000/svg">
                     <title>LinkedIn</title>
                     <path
@@ -124,6 +128,53 @@
         </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('request-button').addEventListener('click', () => {
+      console.log("hello");
+      if (navigator.geolocation) {
+        // Adjust the WebSocket URL to point to your Flask server
+        // const socket = new WebSocket('ws://127.0.0.1:5000/ws'); // Change port if necessary
+        var socket = io.connect('http://localhost:5000');
+        console.log("Hello");
+        // Listen for the WebSocket connection to open
+        // socket.addEventListener('open', () => {
+          console.log("helle");
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              var userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+                name: $('input[name=name]').val(),
+                phoneNo: $('input[name=phoneNo]').val()
+              };
+
+              // Send the location data to the server
+              // socket.emit(JSON.stringify(userLocation));
+              socket.emit('send_location', JSON.stringify(userLocation));
+              console.log("Location data sent:", userLocation);
+              console.log("Data type", typeof JSON.stringify(userLocation));
+              alert('Location send!');
+            },
+            (error) => {
+              console.error('Location access denied:', error);
+            }
+          );
+        // });
+
+        socket.addEventListener('close', () => {
+          console.log('WebSocket connection closed.');
+        });
+
+        socket.addEventListener('error', (event) => {
+          console.error('WebSocket error:', event);
+        });
+      } else {
+        console.error('Geolocation not supported by your browser.');
+      }
+    });
+  </script>
+
   <script>
     var backButton = document.getElementById('previous-arrow');
     backButton.addEventListener("click", function () {
@@ -131,7 +182,39 @@
     });
   </script>
 
-  <script>
+<script>
+  function submitForm() {
+    var formData = {
+  'name': $('input[name=name]').val(),
+  'phoneNo': $('input[name=phoneNo]').val()
+};
+
+  $.ajax({
+      type: 'POST',
+      url: '/submit_rescue',
+      data: formData,
+      dataType: 'json',
+      encode: true
+  })
+  .done(function(data) {
+      console.log(data);
+      // Display a success message or perform other actions if needed
+  })
+  .fail(function(data) {
+      console.error('Error:', data);
+  });
+}
+  function changeContent() {
+    var info = document.querySelector('.enter-info');
+    info.classList.toggle("visible");
+
+    var tempContent = document.querySelector('.temp-content');
+    tempContent.classList.toggle('visible');
+  }
+</script>
+
+<!-- Old one -->
+  <!-- <script>
     function changeContent() {
       var info = document.querySelector('.enter-info');
       info.classList.toggle("visible");
@@ -139,6 +222,6 @@
       var tempContent = document.querySelector('.temp-content');
       tempContent.classList.toggle('visible');
     }
-  </script>
+  </script> -->
 </body>
 </html>

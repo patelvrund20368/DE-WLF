@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="='utf-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link rel="stylesheet" href="../static/organization.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
   <title>Show My Location</title>
 </head>
 
@@ -42,39 +45,39 @@
       <div class="map-container">
         <div id="map"></div>
       </div>
-      <div class="user-info">
-        <div class="info">
-          <p>User: <span>&#160;Dhara Savani</span></p>
-          <p>Contact: +91-9820398233</p>
+      <div id="user-info">
+        <!-- <div class="info">
+          <p>User: <span>&#160;{{ name }}</span></p>
+          <p>Contact: +91-<span>&#160;{{ phone_no }}</span></p>
           <div id="distance">Distance: Calculating...</div>
-          <button class="accept-decline-button">Accept</button>
-          <button class="accept-decline-button" onclick="removeInfo(this)">
-            Decline
+          <button class="accept-button " id="special">Accept</button>
+          <button class="decline-button" onclick="removeInfo(this)">
+            Decline 
           </button>
           <hr />
-        </div>
+        </div> -->
 
-        <div class="info">
+        <!-- <div class="info">
           <p>User: <span>&#160;Vrund Patel</span></p>
           <p>Contact: +91-9820398233</p>
           <div id="distance">Distance: Calculating...</div>
-          <button class="accept-decline-button">Accept</button>
-          <button class="accept-decline-button" onclick="removeInfo(this)">
+          <button class="accept-button">Accept</button>
+          <button class="decline-button" onclick="removeInfo(this)">
             Decline
           </button>
           <hr />
-        </div>
-
+        </div> -->
+<!-- 
         <div class="info">
           <p>User: <span>&#160;Parth Patel</span></p>
           <p>Contact: +91-9820398233</p>
           <div id="distance">Distance: Calculating...</div>
-          <button class="accept-decline-button">Accept</button>
-          <button class="accept-decline-button" onclick="removeInfo(this)">
+          <button class="accept-button">Accept</button>
+          <button class="decline-button" onclick="removeInfo(this)">
             Decline
           </button>
           <hr />
-        </div>
+        </div> -->
       </div>
     </section>
     
@@ -171,8 +174,8 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.querySelector('.toggle-button');
-      const navbarLinks = document.querySelector('.navbar-links');
+      const toggleButton = document.querySelector('.menu-button');
+      const navbarLinks = document.querySelector('.header-link');
 
       toggleButton.addEventListener('click', () => {
         // navbarLinks.classList.toggle('active');
@@ -181,7 +184,314 @@
     });
   </script>
 
-  <script>
+<!-- New One -->
+<script>
+  // Initialize the map
+  var map = L.map("map").setView([0, 0], 13);
+
+  // Add an OpenStreetMap tile layer
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    subdomains: "abc",
+  }).addTo(map);
+
+  // Create a WebSocket connection to receive location data from the sender
+  const socket = io.connect('http://localhost:5000'); 
+  console.log("Hello1");
+  var markers = L.featureGroup().addTo(map);
+  // var acceptButtons = document.getElementsByClassName("accept-button");
+  let orgLocation = null;
+
+  function getOrgLocation(){
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position) {
+        orgLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        // orgLocation = JSON.parse(orgLocation);
+        console.log("Organization location:", orgLocation);
+      }, function(error) {
+        console.error('Error getting organization location:', error);
+      });
+    } else{
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }
+
+  window.onload = getOrgLocation();  
+  // Listen for incoming location data
+  socket.on('receive_location', function (event) {
+    // console.log(typeof event);  //temporary commented
+    // console.log("hello"); //temporary commented
+    if (typeof event === "string") {
+      console.log("Data type: ", typeof event);
+      try{
+        const userLocation = JSON.parse(event);
+        addRescueRequest(userLocation, orgLocation);
+      
+      // let orglat;
+      // let orglng;
+    //   var button = document.getElementById('special'); // this
+    //   var infoDiv = button.closest('.info'); //this
+    //   infoDiv.querySelector('p:nth-of-type(1) span').innerHTML = userLocation.name;  // this
+    //   console.log(typeof userLocation.phoneNo); // this
+    //   infoDiv.querySelector('p:nth-of-type(2) span').innerHTML = userLocation.phoneNo; // this
+    //   // button.closest('.info').querySelector('span').innerHTML = userLocation
+    //   button.addEventListener("click", function () { // this
+    //   console.log("Hello"); // this
+    //     // navigator.geolocation.getCurrentPosition(function(position) {
+    //     //       orglat = position.coords.latitude;
+    //     //       orglng = position.coords.longitude;
+              
+    //     //       alert("Your current coordinates are " + userLat + ", " + userLng);
+    //     //   }, function(error) {
+    //     //       alert('Error getting your location: ' + error.message);
+    //     //   });
+    //   var marker = L.marker([ // this
+    //     userLocation.lat, // this
+    //     userLocation.lng, // this
+    //   ]).addTo(markers); // this
+
+      
+    //   var name = infoDiv.querySelector('p:nth-of-type(1) span').textContent; // this
+    //   var phoneNumber = infoDiv.querySelector('p:nth-of-type(2) span').textContent; // this
+    //   console.log(name); // this
+    //   var popupContent = // this
+    //     `<strong>User Information:</strong><br>Name: ${name}<br>Email: wildliferescue@wlf.com<br>Phone No: ${userLocation.phoneNo}`; // this
+    //   // const distance = calculateDistance(userLocation.lat, userLocation.lng, orglat, orglng);
+
+    // // Display the calculated distance
+    //   // document.getElementById('distance').textContent = 'Distance: ' + distance.toFixed(2) + ' km';
+    //   marker.bindPopup(popupContent).openPopup(); // this
+    //   markers.addTo(map); // this
+    //   map.fitBounds(markers.getBounds()); // this
+
+    //   // Center the map on the user's location
+    //   map.setView(userLocation, 13); // this
+
+    //   // Add a marker at the user's location (optional)
+    //   L.marker(userLocation).addTo(map); // this
+    // });//this 
+    } catch (error) {
+        console.error('Failed to parse JSON data:', error);
+    }    
+  } else {
+    console.log('Received data:', event);
+    }
+  // Array.from(acceptButtons).forEach(function (button) {
+  //   button.addEventListener("click", function () {
+  //     if (navigator.geolocation) {
+  //       // Prompt the user for location access
+  //       navigator.geolocation.getCurrentPosition(
+  //         (position) => {
+  //           // Get the user's location
+  //           const userLocation = {
+  //             lat: position.coords.latitude,
+  //             lng: position.coords.longitude,
+  //           };
+
+  //           var marker = L.marker([
+  //             userLocation.lat,
+  //             userLocation.lng,
+  //           ]).addTo(markers);
+
+  //           var infoDiv = button.closest('.info');
+  //           var name = infoDiv.querySelector('span').textContent;
+  //           console.log(name);
+  //           var popupContent =
+  //             `<strong>User Information:</strong><br>Name: ${name}<br>Email: wildliferescue@wlf.com<br>Phone No: +91 9283819331`;
+  //           marker.bindPopup(popupContent).openPopup();
+  //           markers.addTo(map);
+  //           map.fitBounds(markers.getBounds());
+
+  //           // Center the map on the user's location
+  //           map.setView(userLocation, 13);
+
+  //           // Add a marker at the user's location (optional)
+  //           L.marker(userLocation).addTo(map);
+  //         },
+          
+  //       );
+  //     } 
+  //   });
+  // });
+});
+  // document.getElementsByClassName("accept-button").addEventListener("click", () => {
+
+  // });
+</script>
+
+<!-- New one multiple div -->
+<script>
+  function addRescueRequest(rescueData, orgData){
+    const container = document.getElementById('user-info')
+
+    const rescueDiv = document.createElement('div');
+    rescueDiv.className = 'info';
+    rescueDiv.dataset.location = JSON.stringify(rescueData);
+
+    const distance = calculateDistance(orgData.lat, orgData.lng, rescueData.lat, rescueData.lng);
+    rescueDiv.innerHTML = `
+            <p>User: <span>&#160;${rescueData.name}</span></p>
+            <p>Contact: +91-<span>${rescueData.phoneNo}</span></p>
+            <div id="distance">Distance: ${distance}</div>
+            <button class="accept-button">Accept</button>
+            <button class="decline-button">Decline </button>      
+            <hr />
+    `
+    const acceptBtn = rescueDiv.querySelector('.accept-button');
+    acceptBtn.addEventListener('click',function() {
+        showLocationOnMap(rescueData)
+    }); 
+   
+    const declineBtn = rescueDiv.querySelector('.decline-button');
+    declineBtn.addEventListener('click', function() {
+      removeInfo(declineBtn);
+    });
+    // const declineBtn = rescueDiv.querySelector('.decline-button');
+    // declineBtn.addEventListener('click', function () {
+    //   removeInfo(this);
+    // });
+
+    container.appendChild(rescueDiv);
+  }
+
+  function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the Earth in kilometers
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c; // Distance in kilometers
+    return distance;
+  }
+
+  function showLocationOnMap(locationData){
+    console.log("Hello");
+        // navigator.geolocation.getCurrentPosition(function(position) {
+        //       orglat = position.coords.latitude;
+        //       orglng = position.coords.longitude;
+              
+        //       alert("Your current coordinates are " + userLat + ", " + userLng);
+        //   }, function(error) {
+        //       alert('Error getting your location: ' + error.message);
+        //   });
+      var marker = L.marker([
+        locationData.lat,
+        locationData.lng,
+      ]).addTo(markers);
+
+      
+      // var name = infoDiv.querySelector('p:nth-of-type(1) span').textContent;
+      // var phoneNumber = infoDiv.querySelector('p:nth-of-type(2) span').textContent;
+      // console.log(name);
+      var popupContent =
+        `<strong>User Information:</strong><br>Name: ${locationData.name}<br>Email: wildliferescue@wlf.com<br>Phone No: ${locationData.phoneNo}`;
+      // const distance = calculateDistance(userLocation.lat, userLocation.lng, orglat, orglng);
+
+    // Display the calculated distance
+      // document.getElementById('distance').textContent = 'Distance: ' + distance.toFixed(2) + ' km';
+      marker.bindPopup(popupContent).openPopup();
+      markers.addTo(map);
+      map.fitBounds(markers.getBounds());
+
+      // Center the map on the user's location
+      map.setView(locationData, 13);
+
+      // Add a marker at the user's location (optional)
+      L.marker(locationData).addTo(map);   
+  }
+
+  function removeInfo(button) {
+        var removeInfo = button.closest(".info");
+        console.log("removeInfo: ", removeInfo);
+        var userName = removeInfo.querySelector('p:nth-of-type(1) span').textContent.trim();
+        console.log("Removing userName:", userName);
+        markers.eachLayer(function (layer) {
+          // var popupContent = layer.getPopup().getContent();
+          if(layer.getPopup() && layer.getPopup().getContent().includes(userName)) {
+            console.log("Removing layer for user: ", userName);
+            map.removeLayer(layer);
+          }
+        });
+
+        // markers.eachLayer(function (layer) {
+        //   if (layer._popup.getContent().includes(userName)) {
+        //     map.removeLayer(layer);
+        //     // map.setView([0, 0], 13);
+        //   }
+        // });
+        removeInfo.remove();
+
+        var userInfos = document.querySelectorAll(".info");
+        if(userInfos.length === 0) {
+          map.setView([0,0], 13);
+        }
+      }
+</script>
+<script>
+  function displayInfo() {
+    var userInfos = document.querySelectorAll(".info");
+    console.log(userInfos);
+    userInfos.forEach(function (info) {
+      info.classList.toggle("visible");
+    });
+
+  }
+
+  // function removeInfo(button) {
+  //   var removeInfo = button.closest(".info");
+  //   // console.log("removeInfo:",removeInfo);
+  //   var userName = removeInfo.querySelector('p:nth-of-type(1) span').textContent;
+  //   // console.log(" userName= ",userName);
+
+  //   markers.eachLayer(function (layer) {
+  //       var popupContent = layer.getPopup().getContent(); // Get popup content
+  //       console.log("popupContent:", popupContent);
+  //       console.log("layer: ", layer);
+  //       if (popupContent.includes(userName)) {
+  //           map.removeLayer(layer); // Remove the layer from the map
+  //           // console.log("")
+  //       }
+  //   });
+  //   // markers.eachLayer(function (layer) {
+  //   //   if (layer._popup.getContent().includes(userName)) {
+  //   //     map.removeLayer(layer);
+  //   //     // map.setView([0, 0], 13);
+  //   //   }
+  //   // });
+
+  //   // removeInfo.style.display = 'none';
+  //   removeInfo.remove();
+
+  //   var userInfos = document.querySelectorAll(".info");
+  //   if (userInfos.length === 0) {
+  //     //   markers.clearLayers();
+  //     //   map.closePopup();
+  //     map.setView([0, 0], 13);
+  //   }
+  // }
+
+  
+</script>
+
+<script>
+  // Function to reload the page
+  function reloadPage() {
+    location.reload();
+  }
+
+  // Set interval to reload the page every 3 seconds
+  // setInterval(reloadPage, 3000); // 3000 milliseconds = 3 seconds
+</script>
+<!-- New one ended -->
+
+<!-- Old one -->
+  <!-- <script>
     // Initialize the map
     var map = L.map("map").setView([0, 0], 13);
 
@@ -276,11 +586,13 @@
     backButton.addEventListener("click", function () {
       window.history.back();
     });
-  </script>
+  </script> -->
+
+  <!-- Old one ended  -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.querySelector('.toggle-button');
-      const navbarLinks = document.querySelector('.navbar-links');
+      const toggleButton = document.querySelector('.menu-button');
+      const navbarLinks = document.querySelector('.header-link');
 
       toggleButton.addEventListener('click', () => {
         navbarLinks.classList.toggle('active');
