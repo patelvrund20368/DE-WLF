@@ -3,19 +3,37 @@ from flask_migrate import Migrate
 from db import db
 from models import User
 from config import Config
+from flask_socketio import SocketIO, emit
+import json
+from flask import make_response
 
 app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
 app.config.from_object(Config)
 db.init_app(app)
 migrate = Migrate(app, db)
 
+
+name = ''
+phoneNo = ''
 @app.route("/")
 def home():
     return render_template("homepage.html")
 
-@app.route("/rescue")
+@app.route("/rescue",methods=['GET','POST'])
 def rescue():
     return render_template("rescue.html")
+
+@app.route("/submit_rescue", methods=['POST'])
+def submit_rescue():
+    global name
+    global phoneNo
+
+    name = request.form['name']
+    phoneNo = request.form['phoneNo']
+    print("Type of name:",type(name))
+
+    return "Form submitted"
 
 @app.route("/about-us")
 def about_us():
@@ -52,9 +70,15 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/organization")
+# @app.route("/organization")
+# def organization():
+#     return render_template("organization.html", name=name, phone_no=phoneNo)
+
+@app.route('/organization')
 def organization():
-    return render_template("organization.html")
+    response = make_response(render_template('organization.html', name=name, phone_no=phoneNo))
+    response.headers['Cache-Control'] = 'no-store'
+    return response
 
 @app.route("/precautions")
 def precaution():
@@ -94,5 +118,13 @@ def signup():
 
     return render_template("signup.html")
 
+@socketio.on('send_location')
+def handle_message(data):
+    print("Data type: ", type(data))
+    dataString = data.encode('utf-8')
+    parsed_data = json.loads(dataString)
+    emit('receive_location', json.dumps(parsed_data), broadcast=True)
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=4000, debug=True)
+    # app.run(host='0.0.0.0', port=4000, debug=True)
+    socketio.run(app, host='0.0.0.0',debug=True)

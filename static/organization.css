@@ -224,7 +224,7 @@ main {
     word-wrap: break-word
 }
 
-.user-info {
+#user-info {
     width: 30%;
     align-items: flex-start;
     text-align: left;
@@ -247,7 +247,17 @@ main {
     display: block;
 }
 
-.accept-decline-button {
+.accept-button {
+    margin-block: 5%;
+    margin-right: 3%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+.decline-button {
     margin-block: 5%;
     margin-right: 3%;
     padding: 10px;
