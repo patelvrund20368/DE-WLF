@@ -13,7 +13,7 @@ app.config.from_object(Config)
 db.init_app(app)
 migrate = Migrate(app, db)
 
-
+is_successfull = False
 name = ''
 phoneNo = ''
 @app.route("/")
@@ -54,6 +54,7 @@ def gallery():
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
+        global is_successfull
         organization_email = request.form['organization_email']
         password = request.form['password']
         user = User.query.filter_by(organization_email=organization_email).first()
@@ -61,10 +62,13 @@ def login():
         if user:
             if user.password == password:
                 flash('Login successful!', 'success')
+                is_successfull = True
                 return redirect(url_for('organization'))  # Redirect to organization route after successful login
             else:
+                is_successfull = False
                 flash('Invalid password, please try again.', 'danger')
         else:
+            is_successfull = False
             flash('Login failed. Check your organization email and password.', 'danger')
     
     return render_template("login.html")
@@ -76,9 +80,12 @@ def login():
 
 @app.route('/organization')
 def organization():
-    response = make_response(render_template('organization.html', name=name, phone_no=phoneNo))
-    response.headers['Cache-Control'] = 'no-store'
-    return response
+    # response = make_response(render_template('organization.html', name=name, phone_no=phoneNo))
+    # response.headers['Cache-Control'] = 'no-store'
+    if is_successfull == False:
+        return render_template("login.html")
+    else:
+        return render_template("organization.html")
 
 @app.route("/precautions")
 def precaution():
